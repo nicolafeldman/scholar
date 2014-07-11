@@ -1,0 +1,25 @@
+<div id="scroller" style="width: 800px; height: 400px; margin: 0 auto;">
+    <div class="innerScrollArea">
+        <ul>
+            <li><img src="assets/photo1.jpg" height="500"></li>
+            <li><img src="assets/photo2.jpg" height="500"></li>
+            <li><img src="assets/photo3.jpg" height="500"></li>
+        </ul>
+    </div>
+</div>
+
+<%= button_to "Edit this page", edithomepage_path, :method => :get, :form_class => "edit" %>
+
+<!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+<script type="text/javascript">
+    $(function() {
+
+    $('.image img:gt(0)').hide(); // to hide all but the first image when page loads
+
+    setInterval(function()
+    {
+        $('.image :first-child').fadeOut(1000)
+            .next().fadeIn(1000).end().appendTo('.image');
+    },5000);        
+}
+</script> -->

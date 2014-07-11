@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>S.C.H.O.L.A.R.</title>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= render 'layouts/shim' %>
+</head>
+<body>
+	<!-- <div class="row">
+
+	<div class="span1">
+	</div> -->
+	<div class="row-fluid">
+		<div class="span10 offset1">
+
+			<%= link_to(image_tag("pathways_logo.png", :id => "pathways_logo"), root_path) %>
+			<%= render 'layouts/header' %>
+			<%= yield %>
+		</div>
+	</div>
+
+	<!-- <div class="span1">
+	</div>
+
+	</div> -->
+</body>
+</html>

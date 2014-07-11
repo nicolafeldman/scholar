@@ -1,0 +1,53 @@
+@import "bootstrap";
+
+body {
+	background-image: url('paper.png');
+	background-image-size: cover;
+}
+
+#pathways_logo {
+	width: 30%;
+	height: auto;
+	margin-top: 1%;
+	margin-bottom: 1%;
+}
+
+.navbar-inner ul.nav {
+  margin-right: 0;
+  float: none;
+  width: 100%;
+}
+
+.navbar-inner ul.nav li {
+  width: 16.66%;
+  text-align: center;
+}
+
+.navbar-inner {
+	background-color: #00007A;
+	background-image: none;
+	text-shadow: none;
+}
+
+#BLAHTHISSHOULDSAY#SCROLLER {
+        position: relative;
+    }
+    #BLAHTHISSHOULDSAY#SCROLLER .innerScrollArea {
+        overflow: hidden;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+    }
+    #BLAHTHISSHOULDSAY#SCROLLER ul {
+        padding: 0;
+        margin: 0;
+        position: relative;
+    }
+    #BLAHTHISSHOULDSAY#SCROLLER li {
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+        position: absolute;
+    }
