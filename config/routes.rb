@@ -5,10 +5,13 @@ Scholar::Application.routes.draw do
   root 'home_page#show'
 
   resources :users
+  resources :sessions, only: [:new, :create, :destroy]
 
   match '/edithomepage', to: 'home_page#edit', via: 'get'
   match '/upload', to: 'home_page#upload', via: 'post'
   match '/signup', to: 'users#new', via: 'get'
+  match '/signin', to: 'sessions#new', via: 'get'
+  match '/signout', to: 'sessions#destroy', via: 'delete'
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
