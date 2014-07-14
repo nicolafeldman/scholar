@@ -17,6 +17,9 @@
 
 			<%= link_to(image_tag("pathways_logo.png", :id => "pathways_logo"), root_path) %>
 			<%= render 'layouts/header' %>
+			<% flash.each do |key, value| %>
+        		<div class="alert alert-<%= key %>"><%= value %></div>
+      		<% end %>
 			<%= yield %>
 		</div>
 	</div>
