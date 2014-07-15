@@ -2,31 +2,48 @@
 <html>
 <head>
   <title>S.C.H.O.L.A.R.</title>
+  <style type="text/css"> .stretchX {width: 100%; height: 70%;} </style>
+  <link href='http://fonts.googleapis.com/css?family=Nothing+You+Could+Do' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Lato:100' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  
   <%= csrf_meta_tags %>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+
+  <script type="text/javascript" 
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js">
+  </script>
+
+  <script type="text/javascript" src="slick/slick.min.js"></script>
+
+
   <%= render 'layouts/shim' %>
 </head>
 <body>
-	<!-- <div class="row">
 
-	<div class="span1">
-	</div> -->
 	<div class="row-fluid">
 		<div class="span10 offset1">
 
-			<%= link_to(image_tag("pathways_logo.png", :id => "pathways_logo"), root_path) %>
+			<%= link_to(image_tag("scholar_logo.jpg", :id => "scholar_logo"), root_path, { method: "get" }) %>
+			<%= link_to(image_tag("pathways_logo.png", :id => "pathways_logo"), 'http://onhsa.yale.edu/pathways-science') %>
+			
+			<% if signed_in? %>
+				<%= link_to "View admins", users_path, class: "btn btn-large"%>
+				<%= link_to "Create new admin", signup_path, class: "btn btn-large"%>
+			<% end %>
 			<%= render 'layouts/header' %>
 			<% flash.each do |key, value| %>
         		<div class="alert alert-<%= key %>"><%= value %></div>
       		<% end %>
 			<%= yield %>
+
+			<%= render 'layouts/footer' %>
+
 		</div>
 	</div>
 
-	<!-- <div class="span1">
-	</div>
-
-	</div> -->
 </body>
 </html>

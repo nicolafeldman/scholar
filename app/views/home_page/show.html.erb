@@ -1,25 +1,42 @@
-<div id="scroller" style="width: 800px; height: 400px; margin: 0 auto;">
-    <div class="innerScrollArea">
-        <ul>
-            <li><img src="assets/photo1.jpg" height="500"></li>
-            <li><img src="assets/photo2.jpg" height="500"></li>
-            <li><img src="assets/photo3.jpg" height="500"></li>
-        </ul>
-    </div>
+<div class="row-fluid">
+
+<div class="span10">
+
+<div class="autoplay slick span12" id="slider">
+        <div><img class="stretchX" src="assets/photo1.jpg"></div>
+        <div><img class="stretchX" src="assets/photo2.jpg"></div>
+        <div><img class="stretchX" src="assets/photo3.jpg"></div>
 </div>
 
+<div id="overlay-text">
+<div id="desc-first">S.C.H.O.L.A.R. inspires students to study science,</div>
+
+<div id="desc-sec">technology, engineering, and math.</div>
+</div>
+</div>
+
+
+<div class="span2">
+<%= link_to(signin_path) do %>
+<div id="learn-button">
+
+<p id="attend">attend</p>
+<p id="teach">teach</p>
+<p id="donate">donate</p>
+<br>
+<p id="learn">Learn more  ></p>
+<br>
+<p id="volunteer">volunteer</p>
+<p id="apply">apply</p>
+
+</div>
+<% end %>
+
+</div>
+
+
+</div>
+
+
+
 <%= button_to "Edit this page", edithomepage_path, :method => :get, :form_class => "edit" %>
-
-<!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
-<script type="text/javascript">
-    $(function() {
-
-    $('.image img:gt(0)').hide(); // to hide all but the first image when page loads
-
-    setInterval(function()
-    {
-        $('.image :first-child').fadeOut(1000)
-            .next().fadeIn(1000).end().appendTo('.image');
-    },5000);        
-}
-</script> -->

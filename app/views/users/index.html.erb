@@ -1,0 +1,9 @@
+<h1>Current admins</h1>
+
+<% @users.each do |user| %>
+	<li>
+	<%= user.name + "  |  " %>
+	<%= link_to "delete", user, method: :delete,
+                                  data: { confirm: "You sure?" } %>
+    </li>
+<% end %>
