@@ -4,9 +4,13 @@ class HomePageController < ApplicationController
 	end
 
 	def edit
+		@home_page = HomePage.first
 	end
 
 	def update
+		@home_page = HomePage.first
+			@home_page.attachments.create(:photo=> params[:photo])
+		
 	end
 
 	def upload

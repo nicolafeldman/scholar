@@ -1,4 +1,5 @@
 Scholar::Application.routes.draw do
+  get "attachments/new"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -7,11 +8,15 @@ Scholar::Application.routes.draw do
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
 
+  resources :contact
+
   match '/edithomepage', to: 'home_page#edit', via: 'get'
   match '/upload', to: 'home_page#upload', via: 'post'
   match '/signup', to: 'users#new', via: 'get'
   match '/signin', to: 'sessions#new', via: 'get'
   match '/signout', to: 'sessions#destroy', via: 'delete'
+
+  match '/lol', to: 'home_page#update', via: 'patch'
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'

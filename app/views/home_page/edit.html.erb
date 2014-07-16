@@ -1,7 +1,7 @@
-<%= form_tag({action: :upload}, multipart: true) do %>
-  <%= file_field_tag 'picture' %>
-  <%= label_tag(:q, "Update text:") %>
-  <%= text_field_tag(:q) %>
-  <br>
-  <%= submit_tag("Update") %>
-<% end %>
+<%= form_for @home_page, :url => lol_path, :html => { :multipart => true } do |f| %>
+
+<%= file_field_tag :photo, multiple: true %>
+
+<%= f.submit "go go go", class: "btn btn-large btn-primary"%>
+
+<% end  %>

@@ -3,11 +3,51 @@
     <div class="container">
       <nav>
         <ul class="nav">
-          <li><%= link_to "About Us",    '#' %></li>
-          <li><%= link_to "The Program",    '#' %></li>
-          <li><%= link_to "Apply", '#' %></li>
-          <li><%= link_to "Get Involved", '#' %></li>
+            <li id="fat-menu" class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                About Us <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <li><%= link_to "Staff", '#' %></li>
+                <li><%= link_to "Enrichment", '#' %></li>  
+                <li><%= link_to "Contact", contact_path(1) %></li> 
+              </ul>
+            </li>
+
+            <li id="fat-menu" class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                The Program <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <li><%= link_to "History/Results", '#' %></li>
+                <li><%= link_to "Curriculum", '#' %></li>  
+                <li><%= link_to "Media", '#' %></li> 
+              </ul>
+            </li>
+
+            <li id="fat-menu" class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Apply <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <li><%= link_to "FAQ", '#' %></li>
+                <li><%= link_to "How to Apply", '#' %></li>  
+              </ul>
+            </li>
+
+            <li id="fat-menu" class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Get Involved <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <li><%= link_to "Students", '#' %></li>
+                <li><%= link_to "Volunteer", '#' %></li>  
+                <li><%= link_to "Donate", '#' %></li> 
+              </ul>
+            </li>
+
           <li><%= link_to "Press", '#' %></li>
+          
           <% if signed_in? %>
             <li id="fat-menu" class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -22,6 +62,7 @@
               </ul>
             </li>
           <% end %>
+
         </ul>
       </nav>
     </div>

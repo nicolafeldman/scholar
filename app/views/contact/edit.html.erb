@@ -1,0 +1,5 @@
+
+<%= form_for @contact, url: {controller: "contact", action: "update"} do |f| %>
+  New text: <%= f.text_area :text %><br>
+  <%= f.submit %>
+<% end %>
