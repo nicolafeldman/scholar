@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140716134051) do
+ActiveRecord::Schema.define(version: 20140716195550) do
+
+  create_table "applies", force: true do |t|
+    t.text     "text"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "application_file_name"
+    t.string   "application_content_type"
+    t.integer  "application_file_size"
+    t.datetime "application_updated_at"
+  end
 
   create_table "attachments", force: true do |t|
     t.datetime "created_at"

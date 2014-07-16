@@ -2,11 +2,7 @@
 
 <div class="span9">
 
-<%= image_tag "scroll1.jpg", class: "banner" %>
-<%= image_tag "scroll2.jpg", class: "banner" %>
-<%= image_tag "scroll3.jpg", class: "banner" %>
-<%= image_tag "scroll4.jpg", class: "banner" %>
-<%= image_tag "scroll5.jpg", class: "banner" %>
+<%= render 'layouts/photoscroll' %>
 
 <div class="text-container">
 <p>
@@ -22,11 +18,6 @@
 </div>
 
 
-<div id="quotes" class="span3">
-
-<q><%= @quote %></q>
-<p id="attribution">- <%= @attribution %></p>
-
-</div>
+<%= render 'layouts/sidebar' %>
 
 </div>

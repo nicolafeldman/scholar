@@ -1,0 +1,12 @@
+
+<% if @apply.application_file_name != nil %>
+<%= link_to "Application", @apply.application.url(:original, false) %>
+ | 
+<%= link_to "delete this file", apply_path, :method => :delete %>
+<% else %>
+No application is uploaded
+<% end %>
+
+<% if signed_in? %>
+<%= button_to "Update application", edit_apply_path(1), :method => :get, :form_class => "edit" %>
+<% end %>

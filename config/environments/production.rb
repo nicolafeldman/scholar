@@ -26,8 +26,9 @@ Scholar::Application.configure do
   config.assets.js_compressor = :uglifier
   # config.assets.css_compressor = :sass
 
+  #IMPORTANTTTT!!!!!!!!!!!
   # Do not fallback to assets pipeline if a precompiled asset is missed.
-  config.assets.compile = true
+  #config.assets.compile = true
 
   # Generate digests for assets URLs.
   config.assets.digest = true

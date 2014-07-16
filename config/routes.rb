@@ -9,6 +9,7 @@ Scholar::Application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
 
   resources :contact
+  resources :apply
 
   match '/edithomepage', to: 'home_page#edit', via: 'get'
   match '/upload', to: 'home_page#upload', via: 'post'
