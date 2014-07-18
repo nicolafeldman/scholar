@@ -5,7 +5,11 @@
 <%= render 'layouts/photoscroll' %>
 
 <div class="text-container" id="contact-container">
-<% @press.text %> <br> <br>
+<% @press.text %>
+<% if signed_in? %>
+	<%= button_to "Edit text", edit_press_path(1), :method => :get %>
+<% end %>
+ <br> <br>
 
 <% if @press.links.first == nil %>
 <% else %>
