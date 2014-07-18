@@ -1,6 +1,5 @@
-<%= form_for(@press), url: {controller: "press", action: "update"} do |f| %>
-		<%= f.label :update_text %>
-		<%= f.text_area :text %>
+<%= form_tag "/press/" + params[:id] + "/edit", method: "patch" do %>
+		<%= label_tag("Update text") %> <%= text_area_tag(:text) %>
 		
-		<%= f.submit "Update", class: "btn" %>
+		<%= submit_tag("Update") %>
 <% end %>

@@ -1,5 +1,5 @@
 class PressController < ApplicationController
-	before_action :signed_in_user,   only: [:edit, :update] 
+	before_action :signed_in_user,   only: [:edit, :update]
 
 	def show
 		@press = Press.find(1)
@@ -13,14 +13,14 @@ class PressController < ApplicationController
 	end
 
 	def update
-		@press = Press.find(1)
-  		if @press.update_attributes(press_params)
-  			flash.now[:success] = "Page updated"
-  			render 'show'
-  		else
-  			flash.now[:error] = "Update failed, try again"
-  			render 'show'
-  		end
+      @press = Press.find(1)
+      if @press.update_attributes(press_params)
+        flash.now[:success] = "Page updated"
+        render 'show'
+      else
+        flash.now[:error] = "Update failed, try again"
+        render 'show'
+      end
 	end
 
 	private

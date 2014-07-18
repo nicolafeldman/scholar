@@ -22,6 +22,8 @@ Scholar::Application.routes.draw do
   match 'apply/:id/updatetext', to: 'apply#update_text', via: 'patch'
   match 'apply/:id/edittext', to: 'apply#edittext', via: 'get'
 
+  match 'press/:id/edit', to: 'apply#update_text', via: 'patch'
+
   match '/lol', to: 'home_page#update', via: 'patch'
 
   # You can have the root of your site routed with "root"
