@@ -13,6 +13,7 @@ class PressController < ApplicationController
 	end
 
 	def update
+    @link = Press.find(1).links.build if signed_in?
       @press = Press.find(1)
       if @press.update_attributes(press_params)
         flash.now[:success] = "Page updated"
@@ -26,7 +27,7 @@ class PressController < ApplicationController
 	private
 
 		def press_params
-  			params.require(:press).permit(:text)
+  			params.permit(:text)
   		end
 
       def signed_in_user

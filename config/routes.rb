@@ -22,7 +22,7 @@ Scholar::Application.routes.draw do
   match 'apply/:id/updatetext', to: 'apply#update_text', via: 'patch'
   match 'apply/:id/edittext', to: 'apply#edittext', via: 'get'
 
-  match 'press/:id/edit', to: 'apply#update_text', via: 'patch'
+  match 'press/:id/edit', to: 'press#update', via: 'patch'
 
   match '/lol', to: 'home_page#update', via: 'patch'
 

@@ -30,7 +30,8 @@ class ApplyController < ApplicationController
 
   def destroy
   	@apply = Apply.find(1)
-  	if @apply.update_attributes(application: nil)  		
+  	if @apply.update_attributes(application: nil)
+      flash.now[:success] = "Application deleted"	
   		render 'show'
   	else
   		render 'show'
