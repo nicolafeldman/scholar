@@ -10,6 +10,7 @@ Scholar::Application.routes.draw do
 
   resources :contact
   resources :apply
+  resources :press
 
   match '/edithomepage', to: 'home_page#edit', via: 'get'
   match '/upload', to: 'home_page#upload', via: 'post'

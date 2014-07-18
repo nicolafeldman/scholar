@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140716195550) do
+ActiveRecord::Schema.define(version: 20140718151210) do
 
   create_table "applies", force: true do |t|
     t.text     "text"
@@ -43,6 +43,22 @@ ActiveRecord::Schema.define(version: 20140716195550) do
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
+  end
+
+  create_table "links", force: true do |t|
+    t.text     "text_before"
+    t.text     "text_after"
+    t.text     "link_text"
+    t.text     "url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "press_id"
+  end
+
+  create_table "presses", force: true do |t|
+    t.text     "text"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|

@@ -1,0 +1,13 @@
+hello
+
+<% @press.text %>
+
+<% if @press.links.empty? %>
+	no links
+<% else %>
+	<% @press.links.each do |link| %>
+		<%= link.text_before %>
+		<a href="<%= link.url %>" ><%= link.link_text %></a>
+		<%= link.text_after %>
+	<% end %>
+<% end %>

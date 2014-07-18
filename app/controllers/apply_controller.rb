@@ -1,6 +1,7 @@
 class ApplyController < ApplicationController
 
-	before_action :signed_in_user,   only: [:edit, :update]
+	before_action :signed_in_user,   only: [:edit, :update, :edittext, 
+    :update_text]
 
 	def show
 	@apply = Apply.find(1)
