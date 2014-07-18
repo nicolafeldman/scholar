@@ -17,6 +17,9 @@ Scholar::Application.routes.draw do
   match '/signin', to: 'sessions#new', via: 'get'
   match '/signout', to: 'sessions#destroy', via: 'delete'
 
+  match 'apply/:id/updatetext', to: 'apply#update_text', via: 'patch'
+  match 'apply/:id/edittext', to: 'apply#edittext', via: 'get'
+
   match '/lol', to: 'home_page#update', via: 'patch'
 
   # You can have the root of your site routed with "root"

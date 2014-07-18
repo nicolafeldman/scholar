@@ -32,8 +32,10 @@
 			<%= link_to(image_tag("pathways_logo.png", :id => "pathways_logo"), 'http://onhsa.yale.edu/pathways-science') %>
 			
 			<% if signed_in? %>
-				<%= link_to "View admins", users_path, class: "btn btn-large"%>
-				<%= link_to "Create new admin", signup_path, class: "btn btn-large"%>
+				<%= link_to "View admins", users_path, class: "btn"%>
+				<%= link_to "Create new admin", signup_path, class: "btn"%>
+				<%= link_to "Account settings", edit_user_path(current_user), class: "btn" %>
+				<%= link_to "Sign out", signout_path, method: "delete", class: "btn" %>
 			<% end %>
 			<%= render 'layouts/header' %>
 			<% flash.each do |key, value| %>

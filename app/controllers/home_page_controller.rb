@@ -1,5 +1,7 @@
 class HomePageController < ApplicationController
 
+	before_action :signed_in_user,   only: [:edit, :update]
+
 	def show
 	end
 
@@ -9,8 +11,7 @@ class HomePageController < ApplicationController
 
 	def update
 		@home_page = HomePage.first
-			@home_page.attachments.create(:photo=> params[:photo])
-		
+			@home_page.attachments.create(:photo=> params[:photo])	
 	end
 
 	def upload
@@ -20,5 +21,14 @@ class HomePageController < ApplicationController
   		end
 		# redirect_to 'show'
 	end
+
+	private
+
+		def signed_in_user
+      		unless signed_in?
+        		store_location
+        		redirect_to signin_url, notice: "Please sign in."
+      		end
+    	end
 	
 end

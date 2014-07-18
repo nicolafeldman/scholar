@@ -47,6 +47,12 @@ body {
     }
 }
 
+.dropdown-menu > li > a {
+  &:hover {
+    color: black;
+  }
+}
+
 .navbar {
     margin-bottom: 0px;
 }
@@ -281,6 +287,10 @@ q:after {
   margin: 0;
 }
 
+
+#contact-container {
+  text-align: center;
+}
 
 
 

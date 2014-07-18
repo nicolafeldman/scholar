@@ -1,12 +1,37 @@
+<div class="row-fluid">
 
-<% if @apply.application_file_name != nil %>
-<%= link_to "Application", @apply.application.url(:original, false) %>
- | 
-<%= link_to "delete this file", apply_path, :method => :delete %>
-<% else %>
-No application is uploaded
-<% end %>
+<div class="span9">
+
+<%= render 'layouts/photoscroll' %>
+
+<div class="text-container" id="contact-container">
+<p>
+	<%= @apply.text %>
+
+	<% if signed_in? %>
+	<%= button_to "Edit text", '1/edittext', :method => :get %>
+	<% end %>
+</p>
+<p>
+	<% if @apply.application_file_name != nil %>
+	<%= link_to "Application", @apply.application.url(:original, false) %>
+	 | 
+	<%= link_to "delete this file", apply_path, :method => :delete %>
+	<% else %>
+	No application is uploaded
+	<% end %>
+</p>
 
 <% if signed_in? %>
-<%= button_to "Update application", edit_apply_path(1), :method => :get, :form_class => "edit" %>
+<%= button_to "Upload new application", edit_apply_path(1), :method => :get, :form_class => "edit" %>
 <% end %>
+</div>
+
+</div>
+
+
+<%= render 'layouts/sidebar' %>
+
+</div>
+
+
