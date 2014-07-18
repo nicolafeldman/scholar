@@ -1,13 +1,57 @@
-hello
+<div class="row-fluid">
 
-<% @press.text %>
+<div class="span9">
 
-<% if @press.links.empty? %>
-	no links
+<%= render 'layouts/photoscroll' %>
+
+<div class="text-container" id="contact-container">
+<% @press.text %> <br> <br>
+
+<% if @press.links.first == nil %>
 <% else %>
 	<% @press.links.each do |link| %>
 		<%= link.text_before %>
-		<a href="<%= link.url %>" ><%= link.link_text %></a>
-		<%= link.text_after %>
+		<% if link.url.to_s.include?("http://") %>
+			<a href=<%= link.url.to_s %> ><%= link.link_text %></a>
+		<% else %>
+			<a href=<%= 'http://' + link.url.to_s %> ><%= link.link_text %></a>
+		<% end %>
+		<%= link.text_after %> 
+		<% if signed_in? %>
+			|
+			<%= link_to "delete", link, method: :delete %>
+		<% end %>
+      	<br> <br>
 	<% end %>
 <% end %>
+
+<br>
+
+<% if signed_in? %>
+Add a new link:
+<%= form_for(@link) do |f| %>
+
+  <div class="field">
+  	<%= f.label :text_to_go_before_link %>
+    <%= f.text_area :text_before %>
+
+    <%= f.label :text_to_go_after_link %>
+    <%= f.text_area :text_after %>
+
+    <%= f.label :text_to_show_up_as_linked %>
+    <%= f.text_area :link_text %>
+
+    <%= f.label :URL %>
+    <%= f.text_area :url %>
+  </div>
+  <%= f.submit "Add link", class: "btn btn-large btn-primary" %>
+<% end %>
+<% end %>
+</div>
+
+</div>
+
+
+<%= render 'layouts/sidebar' %>
+
+</div>
