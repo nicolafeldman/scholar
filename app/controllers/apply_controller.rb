@@ -5,9 +5,6 @@ class ApplyController < ApplicationController
 
 	def show
 	@apply = Apply.find(1)
-	quotes = {'Wow!' => 'A SCHOLAR student', 'Scholar is great' => 'A SCHOLAR RA'}
-  @quote = quotes.keys.sample
-  @attribution = quotes[@quote]
 	end
 
 	def update
