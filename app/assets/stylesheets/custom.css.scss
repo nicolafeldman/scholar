@@ -30,6 +30,7 @@ body {
 .navbar-inner ul.nav li {
   width: 20%;
   text-align: center;
+  font-size: 18px;
 }
 
 .navbar-inner {
@@ -301,5 +302,8 @@ q:after {
   text-align: center;
 }
 
+
+.modal-dialog {width:600px;}
+.thumbnail {margin-bottom:6px;}
 
 

@@ -12,6 +12,7 @@ Scholar::Application.routes.draw do
   resources :apply
   resources :press
   resources :links, only: [:create, :destroy]
+  resources :media
 
   match '/edithomepage', to: 'home_page#edit', via: 'get'
   match '/upload', to: 'home_page#upload', via: 'post'
