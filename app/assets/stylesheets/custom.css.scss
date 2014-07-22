@@ -339,12 +339,12 @@ q:after {
 
 #modal {
   margin: auto;
-  margin-top: 10%;
-  background-color: white;
-  height: 50%;
-  width: 50%;
-  background-size: cover;
+  margin-top: 5%;
+  height: 75%;
+  width: 75%;
+  background-size: contain;
   background-position: center;
+  background-repeat: no-repeat;
   cursor: default;
 }
 
@@ -372,7 +372,7 @@ q:after {
 
 #vids {
   padding: 40px;
-  text-align: center;
+  display: inline;
   &:first-child {
     margin-right: 20px;
   }

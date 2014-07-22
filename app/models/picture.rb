@@ -7,9 +7,7 @@ class Picture < ActiveRecord::Base
   belongs_to :enrichment
 
   has_attached_file :image,
-  :styles => { :medium => "300x300>", :thumb => "150x150>" },
-  :convert_options => {
-      :medium => "-auto-orient" }
+  :styles => { :medium => "300x300>", :thumb => "150x150>" }
 
   do_not_validate_attachment_file_type :image
 end
