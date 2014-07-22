@@ -14,8 +14,8 @@ Scholar::Application.routes.draw do
   resources :links, only: [:create, :destroy]
   resources :media
 
-  match '/edithomepage', to: 'home_page#edit', via: 'get'
-  match '/upload', to: 'home_page#upload', via: 'post'
+  resources :home_page
+
   match '/signup', to: 'users#new', via: 'get'
   match '/signin', to: 'sessions#new', via: 'get'
   match '/signout', to: 'sessions#destroy', via: 'delete'

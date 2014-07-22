@@ -1,10 +1,8 @@
-<div class="row-fluid">
-
-<div class="span9">
-
 <%= render 'layouts/photoscroll' %>
 
-<div class="text-container" id="contact-container">
+<div class="row-fluid">
+
+<div class="text-container span9" id="contact-container">
 <%= @press.text %>
 <% if signed_in? %>
 	<%= button_to "Edit text", edit_press_path(1), :method => :get %>
@@ -52,9 +50,6 @@ Add a new link:
 <% end %>
 <% end %>
 </div>
-
-</div>
-
 
 <%= render 'layouts/sidebar' %>
 

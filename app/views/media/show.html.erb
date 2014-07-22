@@ -1,10 +1,15 @@
+<h3><%= @medium.name %></h3>
+<h4><%= @medium.description %></h4>
+
 <div class="container">
-	<ul>
+	<ul class="row" id="gallery-ul">
       <% @medium.pictures.each do |picture| %>
-		<div class="col-lg-3 col-sm-4 col-xs-6"><%= link_to image_tag(picture.image.url(:thumb)), picture.image.url, class: "thumbnail img-responsive", :rel => "lightbox" %></div>
+		<li><%= link_to image_tag(picture.image.url(:thumb)), picture.image.url, class: "col-lg-2 gallery-photo" %></li>
 	  <% end %>
 	</ul>
 </div>
-
-
-
+<div id="modal-shade"></div>
+<div id="modal-container">
+	<div id="modal">
+	</div>
+</div>

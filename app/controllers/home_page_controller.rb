@@ -3,24 +3,33 @@ class HomePageController < ApplicationController
 	before_action :signed_in_user,   only: [:edit, :update]
 
 	def show
+		@home_page = HomePage.first
 	end
 
 	def edit
 		@home_page = HomePage.first
+		@picture = @home_page.pictures.build
 	end
 
 	def update
 		@home_page = HomePage.first
-			@home_page.attachments.create(:photo=> params[:photo])	
+
+		if params[:picture]
+			#===== The magic is here ;)
+			params[:home_page][:picture].each { |picture|
+				@home_page.pictures.create(image: params[:home_page][:picture])
+			}
+		end
+		redirect_to home_page_path(1)
+
+		# if @home_page.update_attributes(home_page_params)
+		# 	flash[:success] = "New photo uploaded"
+		# 	redirect_to home_page_path(1)
+		# else
+		# 	render 'edit'
+		# end
 	end
 
-	def upload
-		@uploaded_io = params[:picture]
-  		File.open(Rails.root.join('public', 'uploads', @uploaded_io.original_filename), 'wb') do |file|
-    		file.write(@uploaded_io.read)
-  		end
-		# redirect_to 'show'
-	end
 
 	private
 
@@ -29,6 +38,11 @@ class HomePageController < ApplicationController
         		store_location
         		redirect_to signin_url, notice: "Please sign in."
       		end
+    	end
+
+    	def home_page_params
+    		params.permit(pictures_attributes: 
+    			[:image, :description])
     	end
 	
 end

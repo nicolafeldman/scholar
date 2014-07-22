@@ -1,4 +1,10 @@
 class MediaController < ApplicationController
+  before_action :signed_in_user,   only: [:new, :create, :destroy]
+
+  def index
+    @media = Medium.all
+  end
+
   def show
   	@medium = Medium.find(params[:id])
   end
@@ -29,10 +35,23 @@ class MediaController < ApplicationController
   	@medium = Medium.new
   end
 
+  def destroy
+    Medium.find(params[:id]).destroy
+    flash[:success] = "Gallery deleted."
+    redirect_to media_url
+  end
+
   private
 
   	def medium_params
   		params.require(:medium).permit(:name, :description,
   			photos_attributes: [:image, :description])
   	end
+
+    def signed_in_user
+      unless signed_in?
+        store_location
+        redirect_to signin_url, notice: "Please sign in."
+      end
+    end
 end

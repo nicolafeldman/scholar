@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140721141124) do
+ActiveRecord::Schema.define(version: 20140722002618) do
 
   create_table "applies", force: true do |t|
     t.text     "text"
@@ -71,6 +71,7 @@ ActiveRecord::Schema.define(version: 20140721141124) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.integer  "medium_id"
+    t.integer  "home_page_id"
   end
 
   create_table "presses", force: true do |t|

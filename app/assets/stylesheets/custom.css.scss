@@ -31,6 +31,7 @@ body {
   width: 20%;
   text-align: center;
   font-size: 18px;
+  line-height: 2em;
 }
 
 .navbar-inner {
@@ -258,7 +259,7 @@ footer ul li {
 }
 
 .text-container {
-  margin-top: 15%;
+  
   padding: 20px;
   background-color:rgba(230,230,230,0.8);
   min-height:300px !important;
@@ -302,8 +303,44 @@ q:after {
   text-align: center;
 }
 
+#gallery-ul {
+  padding: 0 0 0 0;
+  margin: 0 0 0 0;
+  li {
+    list-style-type: none;
+    margin-bottom: 25px;
+    display: inline;
+    margin-right: 25px;
+  }
+  li img {
+    cursor: pointer;
+    display: inline;
+  }
+}
 
-.modal-dialog {width:600px;}
-.thumbnail {margin-bottom:6px;}
+#modal-container {
+  display: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+  background-color: rgba(0,0,0,0.7);
+}
 
+#modal {
+  margin: auto;
+  margin-top: 10%;
+  background-color: white;
+  height: 50%;
+  width: 50%;
+  background-size: cover;
+  background-position: center;
+  cursor: default;
+}
 
+.gallery-photo {
+  max-width: 25px;
+  height: auto;
+}

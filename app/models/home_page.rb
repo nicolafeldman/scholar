@@ -1,3 +1,5 @@
 class HomePage < ActiveRecord::Base
-	has_many :attachments
+	has_many :pictures, :autosave => true
+
+	accepts_nested_attributes_for :pictures
 end

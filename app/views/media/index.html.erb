@@ -1,0 +1,24 @@
+<%= render 'layouts/photoscroll' %>
+
+<div class="row-fluid">
+
+<div class="text-container span9" id="contact-container">
+
+<h1>Photos and videos from previous summers</h1>
+
+<% @media.each do |medium| %>
+<%= link_to medium.name, medium %>
+ | 
+<%= link_to "delete", medium, method: :delete %> <br>
+<% end %>
+
+<br>
+
+<% if signed_in? %>
+	<%= button_to "Add new gallery", new_medium_path, :method => :get %>
+<% end %>
+</div>
+
+<%= render 'layouts/sidebar' %>
+
+</div>
