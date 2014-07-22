@@ -1,0 +1,27 @@
+<%= render 'layouts/photoscroll' %>
+
+<div class="row-fluid">
+
+<div class="text-container span9" id="faq-container">
+
+<% @faqs.each do |faq| %>
+	<p>
+	<b>Q: <%= faq.question %></b> <br>
+	A: <%= faq.answer %>
+	<% if signed_in? %>
+		<br>
+		<%= link_to "Delete this FAQ", faq, method: :delete %>
+    <% end %>
+    <br> <br>
+    </p>
+<% end %>
+
+<% if signed_in? %>
+	<%= button_to "Add new FAQ", new_faq_path, :method => :get %>
+<% end %>
+
+</div>
+
+<%= render 'layouts/sidebar' %>
+
+</div>

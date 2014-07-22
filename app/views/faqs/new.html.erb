@@ -1,0 +1,16 @@
+<h1>Write new FAQ</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@faq) do |f| %>
+
+      <%= f.label :question %>
+      <%= f.text_field :question %>
+
+      <%= f.label :answer %>
+      <%= f.text_field :answer %>
+
+      <%= f.submit "Add question", class: "btn btn-large" %>
+    <% end %>
+  </div>
+</div>

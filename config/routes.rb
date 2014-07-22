@@ -17,6 +17,7 @@ Scholar::Application.routes.draw do
   resources :home_pages
   resources :courses
   resources :enrichments
+  resources :faqs
 
   match '/signup', to: 'users#new', via: 'get'
   match '/signin', to: 'sessions#new', via: 'get'

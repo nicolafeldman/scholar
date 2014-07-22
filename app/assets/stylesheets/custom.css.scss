@@ -59,6 +59,10 @@ body {
     margin-bottom: 0px;
 }
 
+.navbar .nav .dropdown-toggle .caret {
+  margin-top: 18px;
+}
+
 #home-whole {
   height: 70%;
 }
@@ -416,3 +420,8 @@ display: block;
   max-height: 100%;
   max-width: 100%;
 }
+
+#faq-container {
+  padding: 30px;
+}
+
