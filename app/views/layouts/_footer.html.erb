@@ -3,7 +3,9 @@
     <ul>
       <li><%= link_to "Contact",   contact_path(1) %></li>
       <li><%= link_to "Donate", '#' %></li>
+      <% if !signed_in? %>
       <li><%= link_to "Sign in", signin_path, id: "sign-in-link" %></li>
+      <% end %>
     </ul>
   </nav>
 </footer>
