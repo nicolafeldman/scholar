@@ -35,16 +35,16 @@ Add a new link:
 
   <div class="field">
   	<%= f.label :text_to_go_before_link %>
-    <%= f.text_area :text_before %>
-
-    <%= f.label :text_to_go_after_link %>
-    <%= f.text_area :text_after %>
+    <%= f.text_area :text_before %> <br>
 
     <%= f.label :text_to_show_up_as_linked %>
     <%= f.text_area :link_text %>
 
     <%= f.label :URL %>
-    <%= f.text_area :url %>
+    <%= f.text_area :url %> <br>
+
+    <%= f.label :text_to_go_after_link %>
+    <%= f.text_area :text_after %>
   </div>
   <%= f.submit "Add link", class: "btn btn-large btn-primary" %>
 <% end %>

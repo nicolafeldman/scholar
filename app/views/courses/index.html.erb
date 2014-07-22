@@ -1,0 +1,42 @@
+<%= render 'layouts/photoscroll' %>
+
+<div class="row-fluid">
+
+<div class="text-container span9">
+
+<h1>Courses</h1>
+
+<% @courses.each do |course| %>
+
+<div class="course-div">
+<% if (course.id % 2 == 1) %>
+	<% course.pictures.each do |picture| %>
+		<%= image_tag(picture.image.url(:thumb), class: "course-photo-left") %>
+	<% end %>
+<% else %>
+	<% course.pictures.each do |picture| %>
+		<%= image_tag(picture.image.url(:thumb), class: "course-photo-right") %>
+	<% end %>
+<% end %>
+
+
+<h4><%= course.name %></h4>
+<%= course.description %>
+<% if signed_in? %>
+ | 
+<%= link_to "Delete this course", course, method: :delete %> <br>
+<% end %>
+</div>
+
+<% end %>
+
+<br>
+
+<% if signed_in? %>
+	<%= button_to "Add new course", new_course_path, :method => :get %>
+<% end %>
+</div>
+
+<%= render 'layouts/sidebar' %>
+
+</div>

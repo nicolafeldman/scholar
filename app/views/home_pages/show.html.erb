@@ -3,9 +3,9 @@
 <div class="span10">
 
 <div class="autoplay slick span12" id="slider">
-        <div><img class="stretchX" src=<%= @home_page.pictures.first.image.url%> ></div>
-        <div><img class="stretchX" src="/photo2.jpg"></div>
-        <div><img class="stretchX" src="/photo3.jpg"></div>
+<% @home_page.pictures.each do |picture| %>
+        <div><img class="stretchX" src=<%= picture.image.url%> ></div>
+<% end %>
 </div>
 
 <div id="overlay-text">
@@ -39,6 +39,5 @@
 
 
 <% if signed_in? %>
-<%= button_to "Edit this page", edit_home_page_path(1), :method => :get, :form_class => "edit" %>
+<%= button_to "Update these photos", new_home_page_path, :method => :get, :form_class => "edit", class: "btn btn-large" %>
 <% end %>
-

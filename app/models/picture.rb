@@ -3,9 +3,10 @@ class Picture < ActiveRecord::Base
 
   belongs_to :medium
   belongs_to :home_page
+  belongs_to :course
 
   has_attached_file :image,
-  :styles => { :medium => "300x300>", :thumb => "100x100>" },
+  :styles => { :medium => "300x300>", :thumb => "150x150>" },
   :convert_options => {
       :medium => "-auto-orient" }
 

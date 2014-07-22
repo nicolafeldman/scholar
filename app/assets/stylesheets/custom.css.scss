@@ -344,3 +344,19 @@ q:after {
   max-width: 25px;
   height: auto;
 }
+
+.course-photo-left {
+  float: left;
+  margin: 15px;
+}
+
+.course-photo-right {
+  float: right;
+  margin: 15px;
+}
+
+.course-div {
+  display: block;
+  overflow: auto;
+  margin: 20px;
+}

@@ -3,7 +3,7 @@ Scholar::Application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
-  root 'home_page#show'
+  root 'home_pages#show'
 
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
@@ -14,7 +14,8 @@ Scholar::Application.routes.draw do
   resources :links, only: [:create, :destroy]
   resources :media
 
-  resources :home_page
+  resources :home_pages
+  resources :courses
 
   match '/signup', to: 'users#new', via: 'get'
   match '/signin', to: 'sessions#new', via: 'get'

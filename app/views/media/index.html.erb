@@ -8,8 +8,11 @@
 
 <% @media.each do |medium| %>
 <%= link_to medium.name, medium %>
+ <% if signed_in? %>
  | 
-<%= link_to "delete", medium, method: :delete %> <br>
+<%= link_to "delete", medium, method: :delete %>
+<% end %>
+ <br>
 <% end %>
 
 <br>
