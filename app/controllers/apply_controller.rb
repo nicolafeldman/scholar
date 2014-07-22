@@ -40,7 +40,9 @@ class ApplyController < ApplicationController
 
   def update_text
     @apply = Apply.find(1)
-    @apply.update_attributes!(text: params[:text])
+    @apply.update_attributes(text_before: params[:text_before], 
+      text_after: params[:text_after], link_text: params[:link_text],
+      url: params[:url])
     render 'show'
   end
 
@@ -48,7 +50,7 @@ class ApplyController < ApplicationController
   	private
 
   		def apply_params
-  			params.require(:apply).permit(:text, :application)
+  			params.require(:apply).permit(:text_before, :text_after, :link_text, :url, :application)
   		end
 
       def signed_in_user

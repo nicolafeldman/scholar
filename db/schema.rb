@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140722151716) do
+ActiveRecord::Schema.define(version: 20140722183336) do
 
   create_table "applies", force: true do |t|
     t.text     "text"
@@ -21,6 +21,10 @@ ActiveRecord::Schema.define(version: 20140722151716) do
     t.string   "application_content_type"
     t.integer  "application_file_size"
     t.datetime "application_updated_at"
+    t.text     "text_before"
+    t.text     "text_after"
+    t.text     "link_text"
+    t.text     "url"
   end
 
   create_table "attachments", force: true do |t|
@@ -52,6 +56,12 @@ ActiveRecord::Schema.define(version: 20140722151716) do
     t.datetime "updated_at"
   end
 
+  create_table "enrichments", force: true do |t|
+    t.text     "text"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "home_pages", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -69,6 +79,7 @@ ActiveRecord::Schema.define(version: 20140722151716) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "press_id"
+    t.integer  "apply_id"
   end
 
   create_table "media", force: true do |t|
@@ -76,6 +87,8 @@ ActiveRecord::Schema.define(version: 20140722151716) do
     t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "video1"
+    t.string   "video2"
   end
 
   create_table "pictures", force: true do |t|
@@ -89,6 +102,7 @@ ActiveRecord::Schema.define(version: 20140722151716) do
     t.integer  "medium_id"
     t.integer  "home_page_id"
     t.integer  "course_id"
+    t.integer  "enrichment_id"
   end
 
   create_table "presses", force: true do |t|

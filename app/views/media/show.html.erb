@@ -1,5 +1,5 @@
 <h3><%= @medium.name %></h3>
-<h4><%= @medium.description %></h4>
+<p><%= @medium.description %></p>
 
 <div class="container">
 	<ul class="row" id="gallery-ul">
@@ -13,3 +13,17 @@
 	<div id="modal">
 	</div>
 </div>
+
+<div id="vids">
+<% if !@medium.video1.nil? && !@medium.video1.empty? %>
+<%= raw(youtube_embed(@medium.video1)) %>
+<% end %>
+
+<% if !@medium.video2.nil? && !@medium.video2.empty? %>
+<%= raw(youtube_embed(@medium.video2)) %>
+<% end %>
+</div>
+
+<% if signed_in? %>
+	<%= button_to "Edit or add videos", params[:id].to_s + '/editvideo', :method => :get %>
+<% end %>

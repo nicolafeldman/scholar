@@ -1,5 +1,9 @@
 <%= form_tag "/apply/" + params[:id] + "/updatetext", method: "patch" do %>
-		<%= label_tag("Update text") %> <%= text_area_tag(:text) %>
+		<%= label_tag("Text to go before link") %> <%= text_area_tag(:text_before) %>
+		<%= label_tag("Text to show up as linked") %> <%= text_area_tag(:link_text) %>
+		<%= label_tag("URL") %> <%= text_area_tag(:url) %>
+		<%= label_tag("Text to go after link") %> <%= text_area_tag(:text_after) %>
 		
 		<%= submit_tag("Update") %>
 <% end %>
+

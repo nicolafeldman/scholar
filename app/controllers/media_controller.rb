@@ -41,10 +41,19 @@ class MediaController < ApplicationController
     redirect_to media_url
   end
 
+  def editvideo
+  end
+
+  def update_video
+    @medium = Medium.find(params[:id])
+    @medium.update_attributes!(video1: params[:video1], video2: params[:video2])
+    render 'show'
+  end
+
   private
 
   	def medium_params
-  		params.require(:medium).permit(:name, :description,
+  		params.require(:medium).permit(:video1, :video2, :name, :description,
   			photos_attributes: [:image, :description])
   	end
 

@@ -1,0 +1,7 @@
+<%= form_tag "/media/" + params[:id] + "/updatevideo", method: "patch" do %>
+		<%= label_tag("Session 1 video URL") %> <%= text_area_tag(:video1) %>
+
+		<%= label_tag("Session 2 video URL") %> <%= text_area_tag(:video2) %>
+		
+		<%= submit_tag("Update") %>
+<% end %>

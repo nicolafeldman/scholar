@@ -16,6 +16,7 @@ Scholar::Application.routes.draw do
 
   resources :home_pages
   resources :courses
+  resources :enrichments
 
   match '/signup', to: 'users#new', via: 'get'
   match '/signin', to: 'sessions#new', via: 'get'
@@ -24,9 +25,10 @@ Scholar::Application.routes.draw do
   match 'apply/:id/updatetext', to: 'apply#update_text', via: 'patch'
   match 'apply/:id/edittext', to: 'apply#edittext', via: 'get'
 
-  match 'press/:id/edit', to: 'press#update', via: 'patch'
+  match 'media/:id/updatevideo', to: 'media#update_video', via: 'patch'
+  match 'media/:id/editvideo', to: 'media#editvideo', via: 'get'
 
-  match '/lol', to: 'home_page#update', via: 'patch'
+  match 'press/:id/edit', to: 'press#update', via: 'patch'
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'

@@ -5,7 +5,14 @@
 
 <div class="text-container span9" id="contact-container">
 <p>
-	<%= @apply.text %>
+		<%= @apply.text_before %>
+		<% if @apply.url.to_s.include?("http://") %>
+			<a href=<%= @apply.url.to_s %> ><%= @apply.link_text %></a>
+		<% else %>
+			<a href=<%= 'http://' + @apply.url.to_s %> ><%= @apply.link_text %></a>
+		<% end %>
+		<%= @apply.text_after %> 
+
 
 	<% if signed_in? %>
 	<%= button_to "Edit text", '1/edittext', :method => :get %>
