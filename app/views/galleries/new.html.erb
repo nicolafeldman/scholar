@@ -1,0 +1,11 @@
+Choose 5 photos with landscape orientation:
+
+<%= form_for @gallery, :html => { :class => 'form-horizontal', multipart: true } do |f| %>
+    
+    <%= f.label :pictures, :class => 'control-label' %>
+      <%= file_field_tag "images[]", type: :file, multiple: true %>
+
+
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+
+<% end %>

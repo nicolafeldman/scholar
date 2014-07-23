@@ -1,5 +1,5 @@
-<%= image_tag "scroll1.jpg", class: "banner" %>
-<%= image_tag "scroll2.jpg", class: "banner" %>
-<%= image_tag "scroll3.jpg", class: "banner" %>
-<%= image_tag "scroll4.jpg", class: "banner" %>
-<%= image_tag "scroll5.jpg", class: "banner" %>
+<% @gallery.pictures.each do |picture| %>
+
+<%= image_tag(picture.image.url, class: "banner") %>
+
+<% end %>

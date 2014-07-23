@@ -37,6 +37,7 @@
 				<%= link_to "Create new admin", signup_path, class: "btn"%>
 				<%= link_to "Account settings", edit_user_path(current_user), class: "btn" %>
 				<%= link_to "Sign out", signout_path, method: "delete", class: "btn" %>
+				<%= link_to "Change photo scroll", new_gallery_path, method: "get", class: "btn" %>
 			<% end %>
 			<%= render 'layouts/header' %>
 			<% flash.each do |key, value| %>

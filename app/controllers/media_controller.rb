@@ -1,5 +1,6 @@
 class MediaController < ApplicationController
-  before_action :signed_in_user,   only: [:new, :create, :destroy]
+  before_action :signed_in_user,   only: [:new, :create, :destroy, 
+    :editvideo, :update_video]
 
   def index
     @media = Medium.all
