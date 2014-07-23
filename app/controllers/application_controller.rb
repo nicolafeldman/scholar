@@ -10,5 +10,6 @@ class ApplicationController < ActionController::Base
 
   	def layout_data
   		@enrichment = Enrichment.last
+  		@donate = Donate.last
   	end
 end

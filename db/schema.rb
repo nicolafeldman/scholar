@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140722222351) do
+ActiveRecord::Schema.define(version: 20140723140642) do
 
   create_table "applies", force: true do |t|
     t.text     "text"
@@ -54,6 +54,16 @@ ActiveRecord::Schema.define(version: 20140722222351) do
   create_table "curriculums", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "donates", force: true do |t|
+    t.text     "text"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "brochure_file_name"
+    t.string   "brochure_content_type"
+    t.integer  "brochure_file_size"
+    t.datetime "brochure_updated_at"
   end
 
   create_table "enrichments", force: true do |t|
@@ -110,6 +120,7 @@ ActiveRecord::Schema.define(version: 20140722222351) do
     t.integer  "home_page_id"
     t.integer  "course_id"
     t.integer  "enrichment_id"
+    t.integer  "donate_id"
   end
 
   create_table "presses", force: true do |t|

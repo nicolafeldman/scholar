@@ -1,0 +1,4 @@
+<%= form_for @donate, url: {controller: "donates", action: "update"}, :html => { :multipart => true }, method: :patch do |form| %>
+  <%= form.file_field :brochure %>
+  <%= form.submit %>
+<% end %>

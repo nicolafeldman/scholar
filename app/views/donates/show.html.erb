@@ -1,0 +1,48 @@
+<%= render 'layouts/photoscroll' %>
+
+<div class="row-fluid">
+
+
+<div class="text-container span9">
+
+<h1>Donate</h1>
+
+<% if !@donate.pictures.first.nil? %>
+<div id="enrich-photo-right">
+	<img id="enrich-photo" src=<%= @donate.pictures.first.image.url %> >
+</div>
+
+<div id="empty-div">&nbsp;</div>
+
+<div id="enrich-photo-left">
+	<img id="enrich-photo" src=<%= @donate.pictures.last.image.url %> >
+</div>
+<% end %>
+
+<p><%= @donate.text %></p>
+
+<% if @donate.brochure_file_name != nil %>
+	<%= link_to "Brochure", @donate.brochure.url(:original, false) %>
+	 | 
+	<%= link_to "delete this file", donate_path, :method => :delete %>
+	<% else %>
+	No brochure is uploaded
+<% end %>
+
+<% if signed_in? %>
+<%= button_to "Upload new brochure", edit_donate_path(params[:id]), :method => :get, :form_class => "edit" %>
+<% end %>
+
+<br><br>
+
+<% if signed_in? %>
+<%= button_to "Update this page", new_donate_path, :method => :get, :form_class => "edit" %>
+<% end %>
+</div>
+
+
+
+
+<%= render 'layouts/sidebar' %>
+
+</div>
