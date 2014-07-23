@@ -20,6 +20,8 @@ Scholar::Application.routes.draw do
   resources :faqs
   resources :donates
   resources :galleries
+  resources :quotations
+  resources :histories
 
   match '/signup', to: 'users#new', via: 'get'
   match '/signin', to: 'sessions#new', via: 'get'
@@ -27,6 +29,9 @@ Scholar::Application.routes.draw do
 
   match 'apply/:id/updatetext', to: 'apply#update_text', via: 'patch'
   match 'apply/:id/edittext', to: 'apply#edittext', via: 'get'
+
+  match 'histories/:id/updatetext', to: 'histories#update_text', via: 'patch'
+  match 'histories/:id/edittext', to: 'histories#edittext', via: 'get'
 
   match 'media/:id/updatevideo', to: 'media#update_video', via: 'patch'
   match 'media/:id/editvideo', to: 'media#editvideo', via: 'get'

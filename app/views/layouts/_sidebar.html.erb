@@ -1,10 +1,6 @@
 <div id="quotes" class="span3">
 
-<% quotes = {'Wow!' => 'A SCHOLAR student', 'Scholar is great' => 'A SCHOLAR RA'} %>
-<% quote = quotes.keys.sample %>
-<% attribution = quotes[quote] %>
-
-<q><%= quote %></q>
-<p id="attribution">- <%= attribution %></p>
+<q><%= @quotations.first.quote %></q>
+<p id="attribution">- <%= @quotations.first.attribution %></p>
 
 </div>

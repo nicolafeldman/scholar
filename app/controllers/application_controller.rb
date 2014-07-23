@@ -12,5 +12,6 @@ class ApplicationController < ActionController::Base
   		@enrichment = Enrichment.last
   		@donate = Donate.last
       @gallery = Gallery.last
+      @quotations = Quotation.all.sample(1)
   	end
 end

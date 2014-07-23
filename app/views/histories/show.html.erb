@@ -1,0 +1,36 @@
+<%= render 'layouts/photoscroll' %>
+
+<div class="row-fluid">
+
+
+<div class="text-container span9">
+
+	<% if @history.history_photo_file_name != nil %>
+	<div id="history-photo">
+	<img id="enrich-photo" src=<%= @history.history_photo %> >
+	</div>
+	<% else %>
+
+	<% end %>
+<p>
+	<%= @history.text %>
+
+	<% if signed_in? %>
+	<%= button_to "Edit text", '1/edittext', :method => :get %>
+	<% end %>
+</p>
+
+<% if signed_in? %>
+<%= button_to "Upload new photo", edit_history_path(1), :method => :get, :form_class => "edit" %>
+<%= button_to "Delete the photo on this page", history_path, :method => :delete %>
+<% end %>
+</div>
+
+
+
+
+<%= render 'layouts/sidebar' %>
+
+</div>
+
+

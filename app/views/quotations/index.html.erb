@@ -1,0 +1,22 @@
+<% @quotations.each do |quotation| %>
+Quote: <%= quotation.quote %> <br>
+Attribution: <%= quotation.attribution %> <br>
+<%= link_to "Delete this quotation", quotation, method: :delete %> <br><br>
+<% end %>
+
+<br><br>
+
+Add a new quotation:
+<%= form_for(@quotation) do |f| %>
+
+  <div class="field">
+  	<%= f.label :quote %>
+    <%= f.text_field :quote %> <br>
+
+    <%= f.label :attribution %>
+    <%= f.text_field :attribution %>
+
+  </div>
+
+  <%= f.submit "Add quotation", class: "btn btn-large btn-primary" %>
+<% end %>
