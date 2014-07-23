@@ -1,6 +1,8 @@
 <div id="quotes" class="span3">
 
+<% if !@quotations.first.nil? %>
 <q><%= @quotations.first.quote %></q>
 <p id="attribution">- <%= @quotations.first.attribution %></p>
+<% end %>
 
 </div>

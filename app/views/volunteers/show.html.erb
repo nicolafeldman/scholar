@@ -1,0 +1,34 @@
+<%= render 'layouts/photoscroll' %>
+
+<div class="row-fluid">
+
+
+<div class="text-container span9">
+
+<h1>Teach or volunteer at SCHOLAR</h1>
+
+<% if !@volunteer.pictures.first.nil? %>
+<div id="enrich-photo-right">
+	<img id="enrich-photo" src=<%= @volunteer.pictures.first.image.url %> >
+</div>
+
+<div id="empty-div">&nbsp;</div>
+
+<div id="enrich-photo-left">
+	<img id="enrich-photo" src=<%= @volunteer.pictures.last.image.url %> >
+</div>
+<% end %>
+
+<p><%= @volunteer.text %></p>
+
+<% if signed_in? %>
+<%= button_to "Update this page", new_volunteer_path, :method => :get, :form_class => "edit" %>
+<% end %>
+</div>
+
+
+
+
+<%= render 'layouts/sidebar' %>
+
+</div>

@@ -3,26 +3,17 @@
     <div class="container">
       <nav>
         <ul class="nav">
-            <li id="fat-menu" class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                About Us <b class="caret"></b>
-              </a>
-              <ul class="dropdown-menu">
-                <li><%= link_to "Staff", '#' %></li> 
-                <li><%= link_to "Contact", contact_path(1) %></li> 
-              </ul>
-            </li>
 
             <li id="fat-menu" class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 The Program <b class="caret"></b>
               </a>
               <ul class="dropdown-menu">
-                <li><%= link_to "History", '#' %></li>
+                <li><%= link_to "History", history_path(1) %></li>
                 <li><%= link_to "Curriculum", courses_path %></li> 
                 <li><%= link_to "Enrichment", @enrichment %></li> 
                 <li><%= link_to "Photos & Videos", media_path %></li> 
-                <li><%= link_to "Where are they now?", '#' %></li> 
+                <li><%= link_to "Where are they now?", result_path(1) %></li> 
               </ul>
             </li>
 
@@ -41,9 +32,19 @@
                 Get Involved <b class="caret"></b>
               </a>
               <ul class="dropdown-menu">
-                <li><%= link_to "Study with SCHOLAR", '#' %></li>
-                <li><%= link_to "Teach or Volunteer", '#' %></li>  
+                <li><%= link_to "Study with SCHOLAR", @study %></li>
+                <li><%= link_to "Teach or Volunteer", @volunteer %></li>  
                 <li><%= link_to "Donate", @donate %></li> 
+              </ul>
+            </li>
+
+            <li id="fat-menu" class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                About Us <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <li><%= link_to "Staff", staffs_path %></li> 
+                <li><%= link_to "Contact", contact_path(1) %></li> 
               </ul>
             </li>
 

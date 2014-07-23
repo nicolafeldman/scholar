@@ -1,0 +1,5 @@
+<%= form_tag "/results/" + params[:id] + "/updatetext", method: "patch" do %>
+		<%= label_tag("Text") %> <%= text_area_tag(:text) %>
+		
+		<%= submit_tag("Update text") %>
+<% end %>

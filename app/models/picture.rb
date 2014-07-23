@@ -7,6 +7,9 @@ class Picture < ActiveRecord::Base
   belongs_to :enrichment
   belongs_to :donate
   belongs_to :gallery
+  belongs_to :staff
+  belongs_to :volunteer
+  belongs_to :study
 
   has_attached_file :image,
   :styles => { :medium => "300x300>", :thumb => "150x150>" }

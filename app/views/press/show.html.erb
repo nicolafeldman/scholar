@@ -9,8 +9,7 @@
 <% end %>
  <br> <br>
 
-<% if @press.links.first == nil %>
-<% else %>
+<% if !(@press.links.first == nil) %>
 	<% @press.links.each do |link| %>
 		<%= link.text_before %>
 		<% if link.url.to_s.include?("http://") %>

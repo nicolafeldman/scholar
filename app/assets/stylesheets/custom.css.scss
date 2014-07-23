@@ -433,8 +433,35 @@ display: block;
   margin-right: 10px;
 }
 
-#history-photo {
+#result-photo-div {
+  width: 80%;
+  margin: 0 auto;
+}
+
+#result-photo {
   max-height: 100%;
   max-width: 100%;
+}
+
+#button-container {
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.staff-photo {
+  float: left;
+  margin-right: 15px;
+}
+
+#study-right-empty-div {
+  min-height: 25%;
+  float: right;
+  clear: both;
+}
+
+#study-left-empty-div {
+  min-height: 20%;
+  float: left;
+  clear: both;
 }
 

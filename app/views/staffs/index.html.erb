@@ -1,0 +1,38 @@
+<%= render 'layouts/photoscroll' %>
+
+<div class="row-fluid">
+
+<div class="text-container span9">
+
+<h1>Staff</h1>
+
+<% if !@staffs.nil? %>
+<% @staffs.each do |staff| %>
+
+<div class="course-div">
+
+	<% staff.pictures.each do |picture| %>
+		<%= image_tag(picture.image.url(:thumb), class: "staff-photo") %>
+	<% end %>
+
+	<p> <%= staff.text %> </p>
+
+	<% if signed_in? %>
+	 | 
+	<%= link_to "Delete this staff entry", staff, method: :delete %> <br>
+	<% end %>
+</div>
+
+<% end %>
+<% end %>
+
+<br>
+
+<% if signed_in? %>
+	<%= button_to "Add new staff entry", new_staff_path, :method => :get %>
+<% end %>
+</div>
+
+<%= render 'layouts/sidebar' %>
+
+</div>

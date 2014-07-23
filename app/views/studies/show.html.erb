@@ -1,0 +1,37 @@
+<%= render 'layouts/photoscroll' %>
+
+<div class="row-fluid">
+
+
+<div class="text-container span9">
+
+<h1>Study with SCHOLAR</h1>
+
+<% if !@study.pictures.first.nil? %>
+
+<div id="study-left-empty-div">&nbsp;</div>
+
+<div id="enrich-photo-left">
+	<img id="enrich-photo" src=<%= @study.pictures.first.image.url %> >
+</div>
+
+<div id="study-right-empty-div">&nbsp;</div>
+
+<div id="enrich-photo-right">
+	<img id="enrich-photo" src=<%= @study.pictures.last.image.url %> >
+</div>
+<% end %>
+
+<p><%= @study.text %></p>
+
+<% if signed_in? %>
+<%= button_to "Update this page", new_study_path, :method => :get, :form_class => "edit" %>
+<% end %>
+</div>
+
+
+
+
+<%= render 'layouts/sidebar' %>
+
+</div>

@@ -10,7 +10,7 @@ Add a new quotation:
 <%= form_for(@quotation) do |f| %>
 
   <div class="field">
-  	<%= f.label :quote %>
+  	Quote (must be fewer than 255 characters):
     <%= f.text_field :quote %> <br>
 
     <%= f.label :attribution %>

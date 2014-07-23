@@ -1,0 +1,36 @@
+<%= render 'layouts/photoscroll' %>
+
+<div class="row-fluid">
+
+
+<div class="text-container span9">
+
+	<%= @result.text %>
+
+	<% if signed_in? %>
+	<%= button_to "Edit text", '1/edittext', :method => :get %>
+	<%= button_to "Upload new photo", edit_result_path(1), :method => :get, :form_class => "edit" %>
+	<%= button_to "Delete the photo on this page", result_path, :method => :delete %>
+	<% end %>
+
+
+	<% if @result.result_photo_file_name != nil %>
+	<div id="result-photo-div">
+	<a href="<%= @result.result_photo %>" ><img id="result-photo" src=<%= @result.result_photo %> ></a>
+	</div>
+	<% else %>
+
+	<% end %>
+
+
+
+</div>
+
+
+
+
+<%= render 'layouts/sidebar' %>
+
+</div>
+
+
