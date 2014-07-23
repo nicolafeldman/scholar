@@ -1,6 +1,6 @@
 class HomePagesController < ApplicationController
 
-	before_action :signed_in_user,   only: [:edit, :update]
+	before_action :signed_in_user,   only: [:create, :new]
 
 	def show
 		@home_page = HomePage.last
