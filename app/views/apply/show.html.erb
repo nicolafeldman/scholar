@@ -21,8 +21,10 @@
 <p>
 	<% if @apply.application_file_name != nil %>
 	<%= link_to "Application", @apply.application.url(:original, false) %>
-	 | 
-	<%= link_to "delete this file", apply_path, :method => :delete %>
+	<% if signed_in? %>
+		 | 
+		<%= link_to "delete this file", apply_path, :method => :delete %>
+	<% end %>
 	<% else %>
 	No application is uploaded
 	<% end %>

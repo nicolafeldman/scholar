@@ -465,3 +465,9 @@ display: block;
   clear: both;
 }
 
+.dropdown-menu > li > a {
+  &:hover {
+    background-color: gray;
+  }
+}
+

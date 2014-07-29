@@ -23,8 +23,10 @@
 
 <% if @donate.brochure_file_name != nil %>
 	<%= link_to "Brochure", @donate.brochure.url(:original, false) %>
-	 | 
-	<%= link_to "delete this file", donate_path, :method => :delete %>
+	<% if signed_in? %>
+		 | 
+		<%= link_to "delete this file", donate_path, :method => :delete %>
+	<% end %>
 	<% else %>
 	No brochure is uploaded
 <% end %>
