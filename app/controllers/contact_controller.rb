@@ -1,5 +1,5 @@
 class ContactController < ApplicationController
-  before_action :signed_in_user,   only: [:edit, :update]
+  before_action :signed_in_user,   only: [:edit, :update, :create]
 
 	def show
 		@contact = Contact.find(1)

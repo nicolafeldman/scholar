@@ -4,6 +4,7 @@
 
 
 <div class="text-container span9">
+<p class="headline">S.C.H.O.L.A.R. has existed in partnership with New Haven for over 20 years.</p>
 
 	<% if @history.history_photo_file_name != nil %>
 	<div id="history-photo">
@@ -13,7 +14,7 @@
 
 	<% end %>
 <p>
-	<%= @history.text %>
+	<%= simple_format(h @history.text) %>
 
 	<% if signed_in? %>
 	<%= button_to "Edit text", '1/edittext', :method => :get %>

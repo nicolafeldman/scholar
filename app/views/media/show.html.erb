@@ -1,5 +1,6 @@
-<h3><%= @medium.name %></h3>
+<h4><%= @medium.name %></h4>
 <p><%= @medium.description %></p>
+<br>
 
 <div class="container">
 	<ul class="row" id="gallery-ul">
@@ -7,18 +8,22 @@
 		<li><%= link_to image_tag(picture.image.url(:thumb)), picture.image.url, class: "col-lg-2 gallery-photo" %></li>
 	  <% end %>
 	</ul>
-</div>
+
 
 <br>
 
-<div id="vids">
+<div>
 <% if !@medium.video1.nil? && !@medium.video1.empty? %>
 <%= raw(youtube_embed(@medium.video1)) %>
 <% end %>
 
+<br>
+
 <% if !@medium.video2.nil? && !@medium.video2.empty? %>
 <%= raw(youtube_embed(@medium.video2)) %>
 <% end %>
+</div>
+
 </div>
 
 <div id="modal-shade"></div>

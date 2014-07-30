@@ -3,14 +3,15 @@
 <div class="row-fluid">
 
 <div class="text-container span9" id="contact-container">
-<%= @press.text %>
+<p class="headline">S.C.H.O.L.A.R. is in the news.</p> <br>
+<%= simple_format(h @press.text) %>
 <% if signed_in? %>
 	<%= button_to "Edit text", edit_press_path(1), :method => :get %>
 <% end %>
  <br> <br>
 
 <% if !(@press.links.first == nil) %>
-	<% @press.links.each do |link| %>
+	<% @press.links.reverse_each do |link| %>
 		<%= link.text_before %>
 		<% if link.url.to_s.include?("http://") %>
 			<a href=<%= link.url.to_s %> ><%= link.link_text %></a>

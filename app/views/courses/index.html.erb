@@ -4,7 +4,7 @@
 
 <div class="text-container span9">
 
-<h1>Courses</h1>
+<p class="headline">Students are exposed to a variety of courses taught by Yale faculty and staff.</p>
 
 <% @courses.each do |course| %>
 
@@ -19,11 +19,14 @@
 	<% end %>
 <% end %>
 
-
+<% if (course.id % 2 == 1) %>
 <h4><%= course.name %></h4>
-<%= course.description %>
+<% else %>
+<h4 class="course-name-right"><%= course.name %></h4>
+<% end %>
+<%= simple_format(h course.description) %>
+
 <% if signed_in? %>
- | 
 <%= link_to "Delete this course", course, method: :delete %> <br>
 <% end %>
 </div>

@@ -5,7 +5,7 @@
 
 <div class="text-container span9">
 
-<h1>Enrichment</h1>
+<p class="headline">Outside of class, students enjoy hands-on, science-related enrichment activities.</p>
 
 <% if !@enrichment.pictures.first.nil? %>
 <div id="enrich-photo-right">
@@ -19,7 +19,7 @@
 </div>
 <% end %>
 
-<p><%= @enrichment.text %></p>
+<p><%= simple_format(h @enrichment.text) %></p>
 
 <% if signed_in? %>
 <%= button_to "Update this page", new_enrichment_path, :method => :get, :form_class => "edit" %>

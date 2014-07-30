@@ -5,7 +5,7 @@
 
 <div class="text-container span9">
 
-<h1>Donate</h1>
+<p class="headline">Help us continue to make S.C.H.O.L.A.R. a reality for hundreds of promising students.</p>
 
 <% if !@donate.pictures.first.nil? %>
 <div id="enrich-photo-right">
@@ -19,10 +19,10 @@
 </div>
 <% end %>
 
-<p><%= @donate.text %></p>
+<p><%= simple_format(h @donate.text) %></p>
 
 <% if @donate.brochure_file_name != nil %>
-	<%= link_to "Brochure", @donate.brochure.url(:original, false) %>
+	<%= link_to "Information for donors", @donate.brochure.url(:original, false) %>
 	<% if signed_in? %>
 		 | 
 		<%= link_to "delete this file", donate_path, :method => :delete %>

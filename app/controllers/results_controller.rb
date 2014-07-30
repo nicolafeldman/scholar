@@ -1,6 +1,6 @@
 class ResultsController < ApplicationController
 	before_action :signed_in_user,   only: [:edit, :update, :edittext, 
-    :update_text, :create]
+    :update_text, :create, :destroy]
 
 	def show
 		@result = Result.find(1)

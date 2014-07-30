@@ -3,7 +3,9 @@
 <div class="row-fluid">
 
 <div class="text-container span9" id="faq-container">
+<p class="headline">Learn more about the S.C.H.O.L.A.R. program.</p>
 
+<% if !@faqs.empty? %>
 <% @faqs.each do |faq| %>
 	<p>
 	<b>Q: <%= faq.question %></b> <br>
@@ -14,6 +16,7 @@
     <% end %>
     <br> <br>
     </p>
+<% end %>
 <% end %>
 
 <% if signed_in? %>

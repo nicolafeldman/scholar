@@ -4,6 +4,7 @@
 
 
 <div class="text-container span9" id="contact-container">
+<p class="headline">Apply to the S.C.H.O.L.A.R. program here, or learn more about what's required.</p>
 <p>
 		<%= @apply.text_before %>
 		<% if @apply.url.to_s.include?("http://") %>
@@ -11,7 +12,7 @@
 		<% else %>
 			<a href=<%= 'http://' + @apply.url.to_s %> ><%= @apply.link_text %></a>
 		<% end %>
-		<%= @apply.text_after %> 
+		<%= @apply.text_after %>
 
 
 	<% if signed_in? %>

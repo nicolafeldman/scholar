@@ -4,8 +4,9 @@
 
 
 <div class="text-container span9">
+<p class="headline">S.C.H.O.L.A.R. students go on to excel in college and beyond.</p>
 
-	<%= @result.text %>
+	<%= simple_format(h @result.text) %>
 
 	<% if signed_in? %>
 	<%= button_to "Edit text", '1/edittext', :method => :get %>
@@ -13,6 +14,7 @@
 	<%= button_to "Delete the photo on this page", result_path, :method => :delete %>
 	<% end %>
 
+<br>
 
 	<% if @result.result_photo_file_name != nil %>
 	<div id="result-photo-div">
