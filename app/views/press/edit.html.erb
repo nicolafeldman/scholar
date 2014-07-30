@@ -1,5 +1,6 @@
 <%= form_tag "/press/" + params[:id] + "/edit", method: "patch" do %>
-		<%= label_tag("Update text") %> <%= text_area_tag(:text) %>
+		<h4>Update the text on the Press page:</h4>
+		<%= text_area_tag(:text) %><br><br>
 		
 		<%= submit_tag("Update") %>
 <% end %>

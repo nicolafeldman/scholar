@@ -16,7 +16,7 @@
 
 
 	<% if signed_in? %>
-	<%= button_to "Edit text", '1/edittext', :method => :get %>
+	<%= button_to "Edit text", '1/edittext', :method => :get, class: "btn" %>
 	<% end %>
 </p>
 <p>
@@ -32,7 +32,7 @@
 </p>
 
 <% if signed_in? %>
-<%= button_to "Upload new application", edit_apply_path(1), :method => :get, :form_class => "edit" %>
+<%= button_to "Upload new application", edit_apply_path(1), :method => :get, :form_class => "edit", class: "btn" %>
 <% end %>
 </div>
 

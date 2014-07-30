@@ -1,9 +1,18 @@
+<h4>Edit the text on the Apply page (the text can include a link):</h4><br>
+
 <%= form_tag "/apply/" + params[:id] + "/updatetext", method: "patch" do %>
-		<%= label_tag("Text to go before link") %> <%= text_area_tag(:text_before) %>
-		<%= label_tag("Text to show up as linked") %> <%= text_area_tag(:link_text) %>
-		<%= label_tag("URL") %> <%= text_area_tag(:url) %>
-		<%= label_tag("Text to go after link") %> <%= text_area_tag(:text_after) %>
+		<h4>Text to go before link:</h4>
+		<%= text_area_tag(:text_before) %><br>
+
+		<h4>Text to show up as linked:</h4>
+		<%= text_area_tag(:link_text) %><br>
+
+		<h4>URL:</h4>
+		<%= text_area_tag(:url) %><br>
+
+		<h4>Text to go after link:</h4>
+		<%= text_area_tag(:text_after) %><br><br>
 		
-		<%= submit_tag("Update") %>
+		<%= submit_tag("Update text") %>
 <% end %>
 

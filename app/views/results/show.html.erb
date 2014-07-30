@@ -9,9 +9,9 @@
 	<%= simple_format(h @result.text) %>
 
 	<% if signed_in? %>
-	<%= button_to "Edit text", '1/edittext', :method => :get %>
-	<%= button_to "Upload new photo", edit_result_path(1), :method => :get, :form_class => "edit" %>
-	<%= button_to "Delete the photo on this page", result_path, :method => :delete %>
+	<%= button_to "Edit text", '1/edittext', :method => :get, class: "btn" %>
+	<%= button_to "Upload new photo", edit_result_path(1), :method => :get, :form_class => "edit", class: "btn right-button" %>
+	<%= button_to "Delete the photo on this page", result_path, :method => :delete, class: "btn right-button" %>
 	<% end %>
 
 <br>

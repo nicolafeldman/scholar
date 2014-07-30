@@ -1,5 +1,7 @@
+<h4>Text to appear on the History page:</h4>
+
 <%= form_tag "/histories/" + params[:id] + "/updatetext", method: "patch" do %>
-		<%= label_tag("Text") %> <%= text_area_tag(:text) %>
+		<%= text_area_tag(:text) %><br><br>
 		
 		<%= submit_tag("Update text") %>
 <% end %>

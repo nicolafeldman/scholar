@@ -33,5 +33,5 @@
 </div>
 
 <% if signed_in? %>
-	<%= button_to "Edit or add videos", params[:id].to_s + '/editvideo', :method => :get %>
+	<%= button_to "Edit or add videos", params[:id].to_s + '/editvideo', :method => :get, class: "btn btn-large" %>
 <% end %>

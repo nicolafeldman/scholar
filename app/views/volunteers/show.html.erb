@@ -22,7 +22,7 @@
 <p><%= simple_format(h @volunteer.text) %></p>
 
 <% if signed_in? %>
-<%= button_to "Update this page", new_volunteer_path, :method => :get, :form_class => "edit" %>
+<%= button_to "Update this page", new_volunteer_path, :method => :get, :form_class => "edit", class: "btn btn-large" %>
 <% end %>
 </div>
 

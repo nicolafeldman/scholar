@@ -1,12 +1,11 @@
-Choose one photo: <br>
-
 <%= form_for @staff, :html => { :class => 'form-horizontal', multipart: true } do |f| %>
+	
+	<h4>Text to describe staff member:</h4>
+    <%= f.text_area :text, class: "full-width-text-area" %><br>
 
- <%= f.label :text, :class => 'control-label' %>
-      <%= f.text_area :text, :class => 'text_field' %>
+    <h4>Choose ONE photo:</h4>
+    <%= file_field_tag "images[]", type: :file, multiple: true %><br><br>
 
-      <%= file_field_tag "images[]", type: :file, multiple: true %>
-
-    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= f.submit "Add staff member", :class => 'btn btn-large btn-primary' %>
 
 <% end %>

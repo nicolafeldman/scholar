@@ -10,21 +10,22 @@
 	<div id="history-photo">
 	<img id="enrich-photo" src=<%= @history.history_photo %> >
 	</div>
-	<% else %>
+
+	<% if signed_in? %>
+		<%= button_to "Upload new photo", edit_history_path(1), :method => :get, :form_class => "edit", class: "btn right-button" %><br><br>
+		<%= button_to "Delete this photo", history_path, :method => :delete, class: "btn right-button" %>
+	<% end %>
 
 	<% end %>
 <p>
 	<%= simple_format(h @history.text) %>
 
 	<% if signed_in? %>
-	<%= button_to "Edit text", '1/edittext', :method => :get %>
+	<%= button_to "Edit text", '1/edittext', :method => :get, class: "btn" %>
 	<% end %>
 </p>
 
-<% if signed_in? %>
-<%= button_to "Upload new photo", edit_history_path(1), :method => :get, :form_class => "edit" %>
-<%= button_to "Delete the photo on this page", history_path, :method => :delete %>
-<% end %>
+
 </div>
 
 

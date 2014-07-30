@@ -22,7 +22,8 @@
 <p><%= simple_format(h @enrichment.text) %></p>
 
 <% if signed_in? %>
-<%= button_to "Update this page", new_enrichment_path, :method => :get, :form_class => "edit" %>
+<br>
+<%= button_to "Update this page", new_enrichment_path, :method => :get, :form_class => "edit", class: "btn btn-large" %>
 <% end %>
 </div>
 

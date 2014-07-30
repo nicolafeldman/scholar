@@ -32,13 +32,13 @@
 <% end %>
 
 <% if signed_in? %>
-<%= button_to "Upload new brochure", edit_donate_path(params[:id]), :method => :get, :form_class => "edit" %>
+<%= button_to "Upload new brochure", edit_donate_path(params[:id]), :method => :get, :form_class => "edit", class: "btn" %>
 <% end %>
 
 <br><br>
 
 <% if signed_in? %>
-<%= button_to "Update this page", new_donate_path, :method => :get, :form_class => "edit" %>
+<%= button_to "Update this page", new_donate_path, :method => :get, :form_class => "edit", class: "btn btn-large" %>
 <% end %>
 </div>
 

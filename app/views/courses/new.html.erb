@@ -1,21 +1,15 @@
-Choose one photo: <br>
-
+<h4>Add the information for a new course:</h4>
 <%= form_for @course, :html => { :class => 'form-horizontal', multipart: true } do |f| %>
 
- <%= f.label :name, :class => 'control-label' %>
-      <%= f.text_field :name, :class => 'text_field' %> <br>
+ Name:<br>
+ <%= f.text_field :name %> <br><br>
 
- <%= f.label :description, :class => 'control-label' %>
-      <%= f.text_field :description, :class => 'text_field' %>
+ Description:<br>
+ <%= f.text_area :description, :class => 'full-width-text-area' %> <br><br>
 
-      <div class="control-group">
-    <%= f.label :pictures, :class => 'control-label' %>
-    <div class="controls">
-      <%= file_field_tag "images[]", type: :file, multiple: true %>
-    </div>
-  </div>
+ Choose ONE photo to appear next to the description of this course:<br>
+ <%= file_field_tag "images[]", type: :file, multiple: true %><br><br>
 
-
-    <%= f.submit nil, :class => 'btn btn-primary' %>
+ <%= f.submit "Create course", :class => 'btn btn-large btn-primary' %>
 
 <% end %>

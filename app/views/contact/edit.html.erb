@@ -1,5 +1,5 @@
-
 <%= form_for @contact, url: {controller: "contact", action: "update"} do |f| %>
-  New text: <%= f.text_area :text %><br>
-  <%= f.submit %>
+  <h4>Text to appear on Contact page:</h4>
+  <%= f.text_area :text, class: "full-width-text-area" %><br><br>
+  <%= f.submit "Update page" %>
 <% end %>

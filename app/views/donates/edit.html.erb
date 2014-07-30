@@ -1,4 +1,5 @@
+<h4>Upload a new brochure for donors:</h4>
 <%= form_for @donate, url: {controller: "donates", action: "update"}, :html => { :multipart => true }, method: :patch do |form| %>
-  <%= form.file_field :brochure %>
-  <%= form.submit %>
+  <%= form.file_field :brochure %><br><br>
+  <%= form.submit "Upload new brochure", class: "btn btn-large btn-primary" %>
 <% end %>

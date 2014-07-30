@@ -1,4 +1,5 @@
+<h4>Choose ONE photo (preferably with landscape orientation) to appear on the "Where are they now?" page</h4>
 <%= form_for @result, url: {controller: "results", action: "update"}, :html => { :multipart => true }, method: :patch do |form| %>
-  <%= form.file_field :result_photo %>
-  <%= form.submit %>
+  <%= form.file_field :result_photo %><br><br>
+  <%= form.submit "Update photo" %>
 <% end %>

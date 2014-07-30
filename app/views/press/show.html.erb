@@ -6,7 +6,7 @@
 <p class="headline">S.C.H.O.L.A.R. is in the news.</p> <br>
 <%= simple_format(h @press.text) %>
 <% if signed_in? %>
-	<%= button_to "Edit text", edit_press_path(1), :method => :get %>
+	<%= button_to "Edit text", edit_press_path(1), :method => :get, class: "btn btn-large" %>
 <% end %>
  <br> <br>
 
@@ -30,20 +30,20 @@
 <br>
 
 <% if signed_in? %>
-Add a new link:
+<h4>Add a new link:</h4>
 <%= form_for(@link) do |f| %>
 
   <div class="field">
-  	<%= f.label :text_to_go_before_link %>
+  	Text to go before link:<br>
     <%= f.text_area :text_before %> <br>
 
-    <%= f.label :text_to_show_up_as_linked %>
-    <%= f.text_area :link_text %>
+    Text to show up as linked:<br>
+    <%= f.text_area :link_text %><br>
 
-    <%= f.label :URL %>
+    URL:<br>
     <%= f.text_area :url %> <br>
 
-    <%= f.label :text_to_go_after_link %>
+    Text to go after link:<br>
     <%= f.text_area :text_after %>
   </div>
   <%= f.submit "Add link", class: "btn btn-large btn-primary" %>

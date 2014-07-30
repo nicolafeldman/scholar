@@ -6,14 +6,14 @@ Attribution: <%= quotation.attribution %> <br>
 
 <br><br>
 
-Add a new quotation:
+<h3>Add a new quotation:</h3>
 <%= form_for(@quotation) do |f| %>
 
   <div class="field">
-  	Quote (must be fewer than 255 characters):
-    <%= f.text_field :quote %> <br>
+  	Quote (must be fewer than 255 characters):<br>
+    <%= f.text_field :quote %> <br><br>
 
-    <%= f.label :attribution %>
+    Attribution:<br>
     <%= f.text_field :attribution %>
 
   </div>

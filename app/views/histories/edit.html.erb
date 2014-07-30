@@ -1,4 +1,5 @@
+<h4>Choose ONE photo (preferably with portrait orientation) to appear on the History page</h4>
 <%= form_for @history, url: {controller: "histories", action: "update"}, :html => { :multipart => true }, method: :patch do |form| %>
   <%= form.file_field :history_photo %>
-  <%= form.submit %>
+  <%= form.submit "Update photo" %>
 <% end %>
