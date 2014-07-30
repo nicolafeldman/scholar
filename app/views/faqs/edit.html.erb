@@ -1,0 +1,12 @@
+<h1>Update this FAQ</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for @faq, url: {controller: "faqs", action: "update"}, :html => { :multipart => true }, method: :patch do |form| %>
+      <%= form.text_field :question %>
+      <%= form.text_field :answer %>
+      <%= form.submit %>
+    <% end %>
+    
+  </div>
+</div>

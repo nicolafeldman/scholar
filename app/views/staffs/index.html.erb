@@ -18,7 +18,7 @@
 	<p> <%= staff.text %> </p>
 
 	<% if signed_in? %>
-	 | 
+	<%= link_to "Edit this staff entry", edit_staff_path(staff) %><br>
 	<%= link_to "Delete this staff entry", staff, method: :delete %> <br>
 	<% end %>
 </div>

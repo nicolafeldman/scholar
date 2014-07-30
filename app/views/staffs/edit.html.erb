@@ -1,0 +1,12 @@
+<h1>Update the information for this staff member</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for @staff, url: {controller: "staffs", action: "update"}, :html => { :multipart => true }, method: :patch do |form| %>
+      <%= form.text_area :text %>
+      <%= file_field_tag "images[]", type: :file, multiple: true %>
+      <%= form.submit %>
+    <% end %>
+    
+  </div>
+</div>

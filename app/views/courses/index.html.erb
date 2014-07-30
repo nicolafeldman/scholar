@@ -27,6 +27,7 @@
 <%= simple_format(h course.description) %>
 
 <% if signed_in? %>
+<%= link_to "Edit this course", edit_course_path(course) %> <br>
 <%= link_to "Delete this course", course, method: :delete %> <br>
 <% end %>
 </div>
@@ -36,7 +37,7 @@
 <br>
 
 <% if signed_in? %>
-	<%= button_to "Add new course", new_course_path, :method => :get %>
+	<%= button_to "Add new course", new_course_path, :method => :get, class: "btn btn-large" %>
 <% end %>
 </div>
 

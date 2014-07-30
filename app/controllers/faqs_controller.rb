@@ -1,5 +1,5 @@
 class FaqsController < ApplicationController
-	before_action :signed_in_user, only: [:new, :create, :destroy]
+	before_action :signed_in_user, only: [:new, :create, :destroy, :edit, :update]
 
 	def index
 		@faqs = Faq.all
@@ -24,6 +24,20 @@ class FaqsController < ApplicationController
     	flash[:success] = "FAQ deleted."
     	redirect_to faqs_url
 	end
+
+  def edit
+    @faq = Faq.find(params[:id])
+  end
+
+  def update
+    @faq = Faq.find(params[:id])
+    if @faq.update_attributes(faq_params)
+      flash[:success] = "FAQ updated"
+      redirect_to faqs_url
+    else
+      render 'edit'
+    end
+  end
 
 	private
 

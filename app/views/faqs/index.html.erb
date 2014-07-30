@@ -12,6 +12,7 @@
 	A: <%= faq.answer %>
 	<% if signed_in? %>
 		<br>
+		<%= link_to "Edit this FAQ", edit_faq_path(faq) %> <br>
 		<%= link_to "Delete this FAQ", faq, method: :delete %>
     <% end %>
     <br> <br>
