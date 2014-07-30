@@ -50,12 +50,18 @@ body {
 }
 
 .dropdown-menu > li > a {
+  min-width: 160px;
+  width: 100%;
+  text-align: left;
   &:hover {
     color: black;
-    background-color: gray;
+    background-color: none;
+    background-image: none;
   }
 }
+
 .dropdown-menu > li {
+  width: 100%;
   &:hover {
     background-color: gray;
   }
@@ -143,26 +149,36 @@ body {
 }
 
 #attend {
+  font-family: 'Lato', sans-serif;
+  color: gray;
   text-align: left;
   margin-left: 15%;
 }
 
 #teach {
+  font-family: 'Lato', sans-serif;
+  color: gray;
   text-align: right;
   margin-right: 25%;
 }
 
 #donate {
+  font-family: 'Lato', sans-serif;
+  color: gray;
   text-align: right;
   margin-right: 15%;
 }
 
 #volunteer {
+  font-family: 'Lato', sans-serif;
+  color: gray;
   text-align: left;
   margin-left: 10%;
 }
 
 #apply {
+  font-family: 'Lato', sans-serif;
+  color: gray;
   text-align: right;
   margin-right: 20%;
   
@@ -474,9 +490,9 @@ display: block;
 }
 
 .headline {
-  color: #0088cc;
+  color: #C250D9;
   font-family: 'Lato', sans-serif;
   font-size: 16px;
-  font-weight: bolder;
+  font-weight: 900;
 }
 
