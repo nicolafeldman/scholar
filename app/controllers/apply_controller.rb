@@ -46,11 +46,11 @@ class ApplyController < ApplicationController
     render 'show'
   end
 
-
   	private
 
   		def apply_params
-  			params.require(:apply).permit(:text_before, :text_after, :link_text, :url, :application)
+  			params.require(:apply).permit(:text_before, :text_after, :link_text, 
+          :url, :application)
   		end
 
       def signed_in_user

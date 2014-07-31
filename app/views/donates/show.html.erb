@@ -5,7 +5,10 @@
 
 <div class="text-container span9">
 
-<p class="headline">Help us continue to make S.C.H.O.L.A.R. a reality for hundreds of promising students.</p>
+<p class="headline"><%= Headline.first.donates %></p>
+<% if signed_in? %>
+	<%= button_to "Edit headline", '/edit_donates_headline', :method => :get, class: "btn" %>
+<% end %>
 
 <% if !@donate.pictures.first.nil? %>
 <div id="enrich-photo-right">

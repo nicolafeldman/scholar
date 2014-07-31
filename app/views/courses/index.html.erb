@@ -4,7 +4,10 @@
 
 <div class="text-container span9">
 
-<p class="headline">Students are exposed to a variety of courses taught by Yale faculty and staff.</p>
+<p class="headline"><%= Headline.first.courses %></p>
+<% if signed_in? %>
+	<%= button_to "Edit headline", '/edit_courses_headline', :method => :get, class: "btn" %>
+<% end %>
 
 <% @courses.each do |course| %>
 

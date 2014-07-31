@@ -3,7 +3,10 @@
 <div class="row-fluid">
 
 <div class="text-container span9" id="contact-container">
-<p class="headline">We want to hear from you.</p>
+<p class="headline"><%= Headline.first.contact %></p>
+<% if signed_in? %>
+	<%= button_to "Edit headline", '/edit_contact_headline', :method => :get, class: "btn" %>
+<% end %>
 
 <p>
 <%= simple_format(h @contact.text) %>

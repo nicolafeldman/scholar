@@ -5,7 +5,10 @@
 
 <div class="text-container span9">
 
-<p class="headline">Outside of class, students enjoy hands-on, science-related enrichment activities.</p>
+<p class="headline"><%= Headline.first.enrichments %></p>
+<% if signed_in? %>
+	<%= button_to "Edit headline", '/edit_enrichments_headline', :method => :get, class: "btn" %>
+<% end %>
 
 <% if !@enrichment.pictures.first.nil? %>
 <div id="enrich-photo-right">

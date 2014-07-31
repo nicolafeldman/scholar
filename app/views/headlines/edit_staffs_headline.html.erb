@@ -1,0 +1,7 @@
+<h4>Update headline for Staff page:</h4>
+    <%= form_for @headline, url: {controller: "headlines", action: "update_staffs_headline"}, :html => { :multipart => true }, method: :patch do |form| %>
+
+      <%= form.text_field :staffs %><br><br>
+
+      <%= form.submit "Update headline", class: "btn btn-large" %>
+    <% end %>

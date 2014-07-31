@@ -3,7 +3,12 @@
 <div class="row-fluid">
 
 <div class="text-container span9" id="contact-container">
-<p class="headline">S.C.H.O.L.A.R. is in the news.</p> <br>
+<p class="headline"><%= Headline.first.press %></p>
+<% if signed_in? %>
+	<%= button_to "Edit headline", '/edit_press_headline', :method => :get, class: "btn" %>
+<% end %>
+
+<br>
 <%= simple_format(h @press.text) %>
 <% if signed_in? %>
 	<%= button_to "Edit text", edit_press_path(1), :method => :get, class: "btn btn-large" %>

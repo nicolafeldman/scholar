@@ -4,7 +4,10 @@
 
 <div class="text-container span9">
 
-<p class="headline">Meet the staff members behind the S.C.H.O.L.A.R. program.</p>
+<p class="headline"><%= Headline.first.staffs %></p>
+<% if signed_in? %>
+	<%= button_to "Edit headline", '/edit_staffs_headline', :method => :get, class: "btn" %>
+<% end %>
 
 <% if !@staffs.nil? %>
 <% @staffs.each do |staff| %>

@@ -4,7 +4,10 @@
 
 <div class="text-container span9" id="contact-container">
 
-<p class="headline">See students enjoying the program firsthand.</p>
+<p class="headline"><%= Headline.first.media %></p>
+<% if signed_in? %>
+	<%= button_to "Edit headline", '/edit_media_headline', :method => :get, class: "btn" %>
+<% end %>
 
 <% @media.each do |medium| %>
 <%= link_to medium.name, medium, class: "medium-list" %>

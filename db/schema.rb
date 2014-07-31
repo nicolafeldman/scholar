@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140731004111) do
+ActiveRecord::Schema.define(version: 20140731164642) do
 
   create_table "applies", force: true do |t|
     t.text     "text"
@@ -82,6 +82,24 @@ ActiveRecord::Schema.define(version: 20140731004111) do
   create_table "galleries", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "headlines", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "apply"
+    t.text     "contact"
+    t.text     "courses"
+    t.text     "donates"
+    t.text     "enrichments"
+    t.text     "faqs"
+    t.text     "histories"
+    t.text     "media"
+    t.text     "press"
+    t.text     "results"
+    t.text     "staffs"
+    t.text     "studies"
+    t.text     "volunteers"
   end
 
   create_table "histories", force: true do |t|

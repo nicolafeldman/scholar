@@ -48,6 +48,48 @@ Scholar::Application.routes.draw do
   match 'donates/:id/edit_full', to: 'donates#edit_full', via: 'get'
   match 'donates/:id/edit_full', to: 'donates#update_full', via: 'patch'
 
+  # match 'apply/:id/update_headline', to: 'apply#update_headline', via: 'patch'
+  # match 'apply/:id/edit_headline', to: 'apply#edit_headline', via: 'get'
+
+  match 'edit_apply_headline', to: 'headlines#edit_apply_headline', via: 'get'
+  match 'update_apply_headline', to: 'headlines#update_apply_headline', via: 'patch'
+
+  match 'edit_contact_headline', to: 'headlines#edit_contact_headline', via: 'get'
+  match 'update_contact_headline', to: 'headlines#update_contact_headline', via: 'patch'
+
+  match 'edit_courses_headline', to: 'headlines#edit_courses_headline', via: 'get'
+  match 'update_courses_headline', to: 'headlines#update_courses_headline', via: 'patch'
+
+  match 'edit_donates_headline', to: 'headlines#edit_donates_headline', via: 'get'
+  match 'update_donates_headline', to: 'headlines#update_donates_headline', via: 'patch'
+
+  match 'edit_enrichments_headline', to: 'headlines#edit_enrichments_headline', via: 'get'
+  match 'update_enrichments_headline', to: 'headlines#update_enrichments_headline', via: 'patch'
+
+  match 'edit_faqs_headline', to: 'headlines#edit_faqs_headline', via: 'get'
+  match 'update_faqs_headline', to: 'headlines#update_faqs_headline', via: 'patch'
+
+  match 'edit_histories_headline', to: 'headlines#edit_histories_headline', via: 'get'
+  match 'update_histories_headline', to: 'headlines#update_histories_headline', via: 'patch'
+
+  match 'edit_media_headline', to: 'headlines#edit_media_headline', via: 'get'
+  match 'update_media_headline', to: 'headlines#update_media_headline', via: 'patch'
+
+  match 'edit_press_headline', to: 'headlines#edit_press_headline', via: 'get'
+  match 'update_press_headline', to: 'headlines#update_press_headline', via: 'patch'
+
+  match 'edit_results_headline', to: 'headlines#edit_results_headline', via: 'get'
+  match 'update_results_headline', to: 'headlines#update_results_headline', via: 'patch'
+
+  match 'edit_staffs_headline', to: 'headlines#edit_staffs_headline', via: 'get'
+  match 'update_staffs_headline', to: 'headlines#update_staffs_headline', via: 'patch'
+
+  match 'edit_studies_headline', to: 'headlines#edit_studies_headline', via: 'get'
+  match 'update_studies_headline', to: 'headlines#update_studies_headline', via: 'patch'
+
+  match 'edit_volunteers_headline', to: 'headlines#edit_volunteers_headline', via: 'get'
+  match 'update_volunteers_headline', to: 'headlines#update_volunteers_headline', via: 'patch'
+
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 

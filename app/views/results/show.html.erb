@@ -4,7 +4,10 @@
 
 
 <div class="text-container span9">
-<p class="headline">S.C.H.O.L.A.R. students go on to excel in college and beyond.</p>
+<p class="headline"><%= Headline.first.results %></p>
+<% if signed_in? %>
+	<%= button_to "Edit headline", '/edit_results_headline', :method => :get, class: "btn" %>
+<% end %>
 
 	<%= simple_format(h @result.text) %>
 

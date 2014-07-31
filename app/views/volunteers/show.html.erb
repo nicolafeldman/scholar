@@ -5,7 +5,10 @@
 
 <div class="text-container span9">
 
-<p class="headline">Make a difference at S.C.H.O.L.A.R.</p>
+<p class="headline"><%= Headline.first.volunteers %></p>
+<% if signed_in? %>
+	<%= button_to "Edit headline", '/edit_volunteers_headline', :method => :get, class: "btn" %>
+<% end %>
 
 <% if !@volunteer.pictures.first.nil? %>
 <div id="enrich-photo-right">

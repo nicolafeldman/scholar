@@ -4,7 +4,10 @@
 
 
 <div class="text-container span9">
-<p class="headline">S.C.H.O.L.A.R. has existed in partnership with New Haven for over 20 years.</p>
+<p class="headline"><%= Headline.first.histories %></p>
+<% if signed_in? %>
+	<%= button_to "Edit headline", '/edit_histories_headline', :method => :get, class: "btn" %>
+<% end %>
 
 	<% if @history.history_photo_file_name != nil %>
 	<div id="history-photo">

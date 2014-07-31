@@ -5,7 +5,10 @@
 
 <div class="text-container span9">
 
-<p class="headline">Learn what a typical day at S.C.H.O.L.A.R. is like for students who attend.</p>
+<p class="headline"><%= Headline.first.studies %></p>
+<% if signed_in? %>
+	<%= button_to "Edit headline", '/edit_studies_headline', :method => :get, class: "btn" %>
+<% end %>
 
 <% if !@study.pictures.first.nil? %>
 
