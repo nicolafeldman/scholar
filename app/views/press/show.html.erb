@@ -24,7 +24,7 @@
 			<a href=<%= 'http://' + link.url.to_s %> ><%= link.link_text %></a>
 		<% end %>
 		<%= link.text_after %> 
-		<% if signed_in? %>
+		<% if signed_in? && !link.url.nil? %>
 			|
 			<%= link_to "delete", link, method: :delete %>
 		<% end %>
