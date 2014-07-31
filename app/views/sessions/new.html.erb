@@ -1,13 +1,14 @@
 <div class="row">
   <div class="span8 offset2">
-  <p class="headline">If you are a current SCHOLAR administrator, please sign in here:</p>
+  <br>
+  <p class="headline">If you are a current SCHOLAR administrator, please sign in here:</p><br>
     <%= form_for(:session, url: sessions_path) do |f| %>
 
       <%= f.label :email %>
       <%= f.text_field :email %>
 
       <%= f.label :password %>
-      <%= f.password_field :password %>
+      <%= f.password_field :password %><br><br>
 
       <%= f.submit "Sign in", class: "btn btn-large btn-primary" %>
     <% end %>
