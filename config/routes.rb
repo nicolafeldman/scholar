@@ -45,6 +45,9 @@ Scholar::Application.routes.draw do
 
   match 'press/:id/edit', to: 'press#update', via: 'patch'
 
+  match 'donates/:id/edit_full', to: 'donates#edit_full', via: 'get'
+  match 'donates/:id/edit_full', to: 'donates#update_full', via: 'patch'
+
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 

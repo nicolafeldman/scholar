@@ -1,34 +1,35 @@
 class DonatesController < ApplicationController
-	before_action :signed_in_user,   only: [:new, :create, :edit, :update,
-    :destroy]
+	before_action :signed_in_user,   only: [:edit_full, :update_full,
+   :edit, :update, :destroy]
 
 	def show
-		@donate = Donate.last
+		@donate = Donate.find(1)
 	end
 
-	def new
-		@donate = Donate.new
-	end
+	def edit_full
+    @donate = Donate.find(1)
+  end
 
-	def create
-	@donate = Donate.new(donate_params)
+  def update_full
+  @donate = Donate.find(1)
 
-    if @donate.save
+    if @donate.update_attributes(donate_params)
 
       if params[:images]
+        @donate.pictures.destroy_all
         params[:images].each { |image|
           @donate.pictures.create(image: image)
         }
       end
 
-      flash[:success] = 'Page updated'
-      redirect_to @donate
+      flash[:success] = 'Page updated!'
+      redirect_to donate_path(1)
       
     else
-      flash.now[:error] = 'Something went wrong'
-      render 'new'
+      flash.now[:error] = 'Page was not updated, try again'
+      render 'edit'
     end
-	end
+  end
 
 	def edit
 		@donate = Donate.find(params[:id])

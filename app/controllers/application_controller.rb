@@ -9,11 +9,11 @@ class ApplicationController < ActionController::Base
   private
 
   	def layout_data
-  		@enrichment = Enrichment.last
-  		@donate = Donate.last
+  		#@enrichment = Enrichment.last
+  		#@donate = Donate.last
       @gallery = Gallery.last
-      @study = Study.last
-      @volunteer = Volunteer.last
+      #@study = Study.last
+      #@volunteer = Volunteer.last
       @quotations = Quotation.all.sample(1)
   	end
 end

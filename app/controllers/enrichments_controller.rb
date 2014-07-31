@@ -1,34 +1,60 @@
 class EnrichmentsController < ApplicationController
-  before_action :signed_in_user,   only: [:new, :create]
+  before_action :signed_in_user,   only: [:edit, :update]
+  #only: [:new, :create]
 
 	def show
-		@enrichment = Enrichment.last
+		@enrichment = Enrichment.find(1)
 	end
 
-	def new
-		@enrichment = Enrichment.new
-	end
+  def edit
+    @enrichment = Enrichment.find(params[:id])
+  end
 
-	def create
-	@enrichment = Enrichment.new(enrichment_params)
+  def update
+  @enrichment = Enrichment.find(params[:id])
 
-    if @enrichment.save
+    if @enrichment.update_attributes(enrichment_params)
 
       if params[:images]
-        #===== The magic is here ;)
+        @enrichment.pictures.destroy_all
         params[:images].each { |image|
           @enrichment.pictures.create(image: image)
         }
       end
 
-      flash[:success] = 'Photos successfully updated!'
+      flash[:success] = 'Page successfully updated!'
       redirect_to @enrichment
       
     else
-      flash.now[:error] = 'Gallery was not created, try again'
-      render 'new'
+      flash.now[:error] = 'Page was not updated, try again'
+      render 'edit'
     end
-	end
+  end
+
+  # def new
+  #   #@enrichment = Enrichment.new
+  # end
+
+	# def create
+	# @enrichment = Enrichment.new(enrichment_params)
+
+ #    if @enrichment.save
+
+ #      if params[:images]
+ #        #===== The magic is here ;)
+ #        params[:images].each { |image|
+ #          @enrichment.pictures.create(image: image)
+ #        }
+ #      end
+
+ #      flash[:success] = 'Photos successfully updated!'
+ #      redirect_to @enrichment
+      
+ #    else
+ #      flash.now[:error] = 'Gallery was not created, try again'
+ #      render 'new'
+ #    end
+	# end
 
 	private
 

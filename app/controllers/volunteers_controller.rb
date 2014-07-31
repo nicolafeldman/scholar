@@ -1,33 +1,34 @@
 class VolunteersController < ApplicationController
-	before_action :signed_in_user,   only: [:new, :create]
+	before_action :signed_in_user,   only: [:edit, :update]
 
 	def show
-		@volunteer = Volunteer.last
+		@volunteer = Volunteer.find(1)
 	end
 
-	def new
-		@volunteer = Volunteer.new
-	end
+	def edit
+    @volunteer = Volunteer.find(params[:id])
+  end
 
-	def create
-	@volunteer = Volunteer.new(volunteer_params)
+  def update
+  @volunteer = Volunteer.find(params[:id])
 
-    if @volunteer.save
+    if @volunteer.update_attributes(volunteer_params)
 
       if params[:images]
+        @volunteer.pictures.destroy_all
         params[:images].each { |image|
           @volunteer.pictures.create(image: image)
         }
       end
 
       flash[:success] = 'Page updated!'
-      redirect_to @volunteer
+      redirect_to volunteer_path(1)
       
     else
-      flash.now[:error] = 'Update failed'
-      render 'new'
+      flash.now[:error] = 'Page was not updated, try again'
+      render 'edit'
     end
-	end
+  end
 
 	private
 

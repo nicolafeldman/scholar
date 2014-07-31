@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140723195430) do
+ActiveRecord::Schema.define(version: 20140731004111) do
 
   create_table "applies", force: true do |t|
     t.text     "text"
@@ -97,10 +97,6 @@ ActiveRecord::Schema.define(version: 20140723195430) do
   create_table "home_pages", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "photo_file_name"
-    t.string   "photo_content_type"
-    t.integer  "photo_file_size"
-    t.datetime "photo_updated_at"
   end
 
   create_table "links", force: true do |t|

@@ -1,36 +1,61 @@
 class HomePagesController < ApplicationController
 
-	before_action :signed_in_user,   only: [:create, :new]
+	before_action :signed_in_user,   only: [:edit, :update]
 
 	def show
-		@home_page = HomePage.last
+		@home_page = HomePage.find(1)
 	end
 
-  def create
-  @home_page = HomePage.new(home_page_params)
+  def edit
+    @home_page = HomePage.find(params[:id])
+  end
 
-    if @home_page.save
+  def update
+  @home_page = HomePage.find(params[:id])
+
+    if @home_page.update_attributes(home_page_params)
 
       if params[:images]
-        #===== The magic is here ;)
+        @home_page.pictures.destroy_all
         params[:images].each { |image|
           @home_page.pictures.create(image: image)
         }
       end
 
-      flash[:success] = 'Photos successfully updated!'
+      flash[:success] = 'Photos updated!'
       redirect_to root_url
       
     else
-      flash.now[:error] = 'Gallery was not created, try again'
-      render 'new'
+      flash.now[:error] = 'Photos were not updated, try again'
+      render 'edit'
     end
-
   end
 
-  def new
-  	@home_page = HomePage.new
-  end
+  # def create
+  # @home_page = HomePage.new(home_page_params)
+
+  #   if @home_page.save
+
+  #     if params[:images]
+  #       #===== The magic is here ;)
+  #       params[:images].each { |image|
+  #         @home_page.pictures.create(image: image)
+  #       }
+  #     end
+
+  #     flash[:success] = 'Photos successfully updated!'
+  #     redirect_to root_url
+      
+  #   else
+  #     flash.now[:error] = 'Gallery was not created, try again'
+  #     render 'new'
+  #   end
+
+  # end
+
+  # def new
+  # 	@home_page = HomePage.new
+  # end
 
   # def destroy
   #   Medium.find(params[:id]).destroy

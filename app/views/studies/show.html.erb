@@ -25,7 +25,7 @@
 <p><%= simple_format(h @study.text) %></p>
 
 <% if signed_in? %>
-<%= button_to "Update this page", new_study_path, :method => :get, :form_class => "edit", class: "btn btn-large" %>
+<%= button_to "Update this page", edit_study_path(1), :method => :get, :form_class => "edit", class: "btn btn-large" %>
 <% end %>
 </div>
 

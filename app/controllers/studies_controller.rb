@@ -1,33 +1,34 @@
 class StudiesController < ApplicationController
-	before_action :signed_in_user,   only: [:new, :create]
+	before_action :signed_in_user,   only: [:edit, :update]
 
 	def show
-		@study = Study.last
+		@study = Study.find(1)
 	end
 
-	def new
-		@study = Study.new
-	end
+  def edit
+    @study = Study.find(params[:id])
+  end
 
-	def create
-	@study = Study.new(study_params)
+  def update
+  @study = Study.find(params[:id])
 
-    if @study.save
+    if @study.update_attributes(study_params)
 
       if params[:images]
+        @study.pictures.destroy_all
         params[:images].each { |image|
           @study.pictures.create(image: image)
         }
       end
 
       flash[:success] = 'Page updated!'
-      redirect_to @study
+      redirect_to study_path(1)
       
     else
-      flash.now[:error] = 'Update failed'
-      render 'new'
+      flash.now[:error] = 'Page was not updated, try again'
+      render 'edit'
     end
-	end
+  end
 
 	private
 

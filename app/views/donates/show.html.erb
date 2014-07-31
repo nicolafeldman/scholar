@@ -38,12 +38,9 @@
 <br><br>
 
 <% if signed_in? %>
-<%= button_to "Update this page", new_donate_path, :method => :get, :form_class => "edit", class: "btn btn-large" %>
+<%= button_to "Update this page", '1/edit_full', :method => :get, :form_class => "edit", class: "btn btn-large" %>
 <% end %>
 </div>
-
-
-
 
 <%= render 'layouts/sidebar' %>
 

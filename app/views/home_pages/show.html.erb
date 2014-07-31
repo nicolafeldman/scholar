@@ -41,5 +41,5 @@
 
 
 <% if signed_in? %>
-<%= button_to "Update these photos", new_home_page_path, :method => :get, :form_class => "edit", class: "btn btn-large" %>
+<%= button_to "Update these photos", edit_home_page_path(1), :method => :get, :form_class => "edit", class: "btn btn-large" %>
 <% end %>
