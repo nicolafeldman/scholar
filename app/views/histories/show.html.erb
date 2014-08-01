@@ -15,11 +15,15 @@
 	</div>
 
 	<% if signed_in? %>
-		<%= button_to "Upload new photo", edit_history_path(1), :method => :get, :form_class => "edit", class: "btn right-button" %><br><br>
 		<%= button_to "Delete this photo", history_path, :method => :delete, class: "btn right-button" %>
 	<% end %>
 
 	<% end %>
+
+	<% if signed_in? %>
+		<%= button_to "Upload new photo", edit_history_path(1), :method => :get, :form_class => "edit", class: "btn right-button" %><br><br>
+	<% end %>
+	
 <p>
 	<%= simple_format(h @history.text) %>
 
