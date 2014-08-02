@@ -82,9 +82,9 @@ Scholar::Application.configure do
   config.paperclip_defaults = {
   :storage => :s3,
   :s3_credentials => {
-    :bucket => ENV['scholarprogram'],
-    :access_key_id => ENV['AKIAIRNBSRCLQDSWS4EA'],
-    :secret_access_key => ENV['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']
+    :bucket => ENV['S3_BUCKET_NAME'],
+    :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+    :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
   }
 }
 end
