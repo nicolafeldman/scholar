@@ -83,8 +83,8 @@ Scholar::Application.configure do
   :storage => :s3,
   :s3_credentials => {
     :bucket => ENV['scholarprogram'],
-    :access_key_id => ENV['AKIAIXNLY4TNQYQ6R5ZQ'],
-    :secret_access_key => ENV['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']
+    :access_key_id => ENV['AKIAIRNBSRCLQDSWS4EA'],
+    :secret_access_key => ENV['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']
   }
 }
 end
