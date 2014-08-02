@@ -78,4 +78,13 @@ Scholar::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+
+  config.paperclip_defaults = {
+  :storage => :s3,
+  :s3_credentials => {
+    :bucket => ENV['scholarprogram'],
+    :access_key_id => ENV['AKIAIXNLY4TNQYQ6R5ZQ'],
+    :secret_access_key => ENV['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']
+  }
+}
 end
